@@ -1,0 +1,19 @@
+// better use of fetch and promises - read codecademy, YDKJS, mdn
+// better error handling - maybe some try catch statements
+// better understanding of cors
+// better understanding of fetch headers
+// remove duplicate pokemon 
+// give every picture owner etc their credit
+// add shine animation on hover on cards
+// when a new input is put in, cancel all previous requests -  maybe have a global array of all current requests and whenever a new search is done, all the requests are aborted (possibly using an 'abort' method on the fetch api?)
+// create the loading animations out of pure css
+// create a complex pokemon-related loading animation
+// improve responsiveness
+// drop-menu with types/pokemon (+ the app also works with typing a pokemons name)
+// selecting types by clicking tags
+// instead of using cards - display 6 clickable icons, which open modals with the pokemons data (6 is the number of pokemon in a team)
+// change opening paragraph
+
+// could utilize .map to make navigating and manipulating the fetch responses better
+// could use the fetch apis second parameter to include an object which has something like mode: 'cors' -> which can allow cross orgin blah blah blah instead of the temporary fix i've been using.
+// could use Promise.all better

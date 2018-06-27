@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Google map API</title>
+	<style>
+		#map {
+			height: 400px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<h1>My Google Map</h1>
+	<div id="map"></div>
+	<script>
+		function initMap() {
+			
+			// map options
+			let options = {
+				zoom: 5,
+				center: {lat: 24.5247, lng: 39.5692}
+			};
+
+			// // new map
+			// let map = new google.maps.Map(document.getElementById('map'), options);
+
+			// // add marker
+			// let marker = new google.maps.Marker({
+			// 	position: {lat: 24.4672, lng: 39.6111},
+			// 	map: map,
+			// 	// icon: img, can also set custom icons
+			// })
+
+			// // info window
+			// let infoWindow = new google.maps.InfoWindow({
+			// 	content: `<h1> The Prophet's Mosque </h1>`
+			// })		
+
+			// marker.addListener('click',() => {
+			// 	infoWindow.open(map, marker)
+			// })
+
+			// add marker function 
+
+			let map = new google.maps.Map(document.getElementById('map'), options);
+			let markers = [
+				{
+					coords: {lat: 24.4672, lng: 39.6111}, 
+					info: `<h1>Masjid An-Nabawi</h1>`, 
+					icon: 'madinah-icon.png'
+				}, 
+				{
+					coords: {lat: 21.4229, lng: 39.8257},
+					info: `<h1>Majsid Al-Haram</h1>`,
+				}, 
+				{
+					coords: {lat: 24.4392, lng: 39.6173},
+					info: `<h1>Majsid Al-Quba</h1>`,
+				}];
+
+			markers.forEach(marker => addMarker(marker));
+
+			function addMarker(props){
+
+				let marker = new google.maps.Marker({
+					position: props.coords,
+					map: map,
+					// icon: img, can also set custom icons
+				})
+
+				// check for custom icon
+				if (props.img) {
+					marker.setIcon(props.img)
+				}
+
+				if (props.info) {
+					var infoWindow = new google.maps.InfoWindow({
+						content: props.info,
+					})	
+				}
+
+				marker.addListener('click',() => {
+					infoWindow.open(map, marker)
+				})
+			}
+
+			// listen for click on map 
+			google.maps.event.addListener(map, 'click', function(event) {
+				console.log(event)
+				addMarker({coords: event.latLng})
+			})
+
+		}
+
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6iC-rWtv-Hwhz-8GX8px8RVrEm4ghfsA&callback=initMap"
+        async defer></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<title>GEOCODE API</title>
+</head>
+<body>
+
+	<!-- this app is useful for formatting addresses before submitting them to databases etc --> 
+
+<div class='container'>
+
+	<h2 id="text-center">Enter Location: </h2>
+	<form id="location-form">
+		<input id="location-input" class='form-control form-control-lg'></input>
+		<br>
+		<button type='submit' class='btn btn-warning btn-block'>Submit</button>
+	</form>
+
+	<div class='card my-4' id="formattedAddress"></div>
+	<div class='card my-4' id="addressComponents"></div>
+	<div class="card my-4" id="geometry"></div>
+</div>
+
+
+
+<script> 
+	function getData(add) {
+		return new Promise(function(resolve, reject) {
+			let xhr = new XMLHttpRequest();
+			xhr.open('GET', `https://maps.googleapis.com/maps/api/geocode/json?address=${add}&key=AIzaSyA6iC-rWtv-Hwhz-8GX8px8RVrEm4ghfsA`);
+			xhr.onload = function() {
+				if (this.status >= 200 && this.status < 300)
+					resolve(JSON.parse(xhr.response));
+				else 
+					reject({status: this.status, statusText: this.statusText})
+			}
+			xhr.onerror = function() {
+				reject({status: this.status, statusText: this.statusText})
+			};
+			xhr.send();
+		})
+	}
+
+	function geocode(e) {
+		e.preventDefault();
+		let input = document.getElementById('location-input').value
+		if (input) { 
+			getData(input)
+			.then(response => {
+				//log full response
+				console.log(response);
+
+				// formatted address
+
+				let formattedAddress = response.results[0].formatted_address;
+				console.log(formattedAddress)
+				formattedAddressOutput = `
+					<ul class='list-group'>
+					  <li class='list-group-item'>${formattedAddress}</li>
+					</ul>
+				`;
+				document.getElementById('formattedAddress').innerHTML = formattedAddressOutput;
+
+				//address components 
+
+				let addressComponents = response.results[0].address_components;
+				console.log(addressComponents)
+				let addressComponentsOutput = `<ul class='list-group'>`
+
+				addressComponents.forEach(comp => {
+					addressComponentsOutput += `
+						<li class='list-group-item'><strong>${comp.types[0]}</strong>: ${comp.long_name}</li>
+					`
+				})
+				addressComponentsOutput += '</ul>'
+				document.getElementById('addressComponents').innerHTML = addressComponentsOutput;
+
+				//address geometry 
+
+				let geometry = response.results[0].geometry;
+				console.log(geometry)
+				let latitude = geometry.location['lat'];
+				let longitude = geometry.location['lng'];
+				let geometryOutput = `
+				<ul class='list-group'>
+					<li class='list-group-item'><strong>Latitude:</strong> ${latitude}</li>
+					<li class='list-group-item'><strong>Longitude:</strong> ${longitude}</li>
+				</ul>
+				`
+				document.getElementById('geometry').innerHTML = geometryOutput;
+				
+			})
+			.catch(error => console.log(error))
+		}
+	}
+
+	document.getElementById('location-form').addEventListener('submit', geocode)
+</script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>	
+</body>
+</html>
+
+

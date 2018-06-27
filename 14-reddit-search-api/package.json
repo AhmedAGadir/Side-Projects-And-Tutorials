@@ -1,0 +1,15 @@
+{
+  "name": "14-reddit-search-api",
+  "version": "1.0.0",
+  "description": "reddit-search-app",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ahmed abdel gadir",
+  "license": "MIT"
+}

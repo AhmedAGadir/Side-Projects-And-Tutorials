@@ -1,0 +1,51 @@
+html {
+	background: url(images/luffy-sabo-ace-wallpaper.jpg) 40%;
+	background-size: cover;
+	font-size: 10px;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Do Hyeon', sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.drums {
+	display: inherit;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.drums > .drum {
+	display: inline-block;
+	text-align: center;
+	border: 4px solid rgb(85, 85, 85);
+	width: 6rem;
+	margin: 4px 4px;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,0.4);
+	transition: 0.05s all;
+}
+
+.drums .drum .letter{
+	display: block;
+	font-size: 3rem;
+	color: white;
+}
+
+.drums .drum .sound {
+	color: gold;
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: .25rem;
+}
+
+.drums > .drum.active {
+	transform: scale(1.6);
+	border: 3px solid gold;
+	box-shadow: 0 0 5px gold;
+}

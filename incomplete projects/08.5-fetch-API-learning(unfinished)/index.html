@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fetch API Sandbox</title>
+</head>
+
+<body>
+
+	
+	<button id="getText">Get Text</button>
+	<div id="output"></div>
+
+	<script>
+		document.getElementById('getText').addEventListener('click', getText);
+
+		function getText() {
+			fetch('sample.txt')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('output').textContent = data;
+			}).catch(err => console.log(err))
+		}
+	</script>
+</body>
+</html>

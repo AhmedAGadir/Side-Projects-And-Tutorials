@@ -1,0 +1,66 @@
+
+<!doctype html>
+<htmL lang="en-uk">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ROCK-PAPER-SCISSORS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+		<header>
+			<h1>
+                <img src='./images/diamond.png' id='diamond1'>
+                <img src='./images/sword.png' id='sword1'>
+                 Rock Paper Scissors 
+                 <img src='./images/sword.png' id='sword2'>
+                 <img src='./images/diamond.png' id='diamond2'>
+             </h1>
+		</header>
+
+		<!-- Icon made by Flaticon Basic License from www.flaticon.com  -->
+
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons-freebies" title="Roundicons Freebies">Roundicons Freebies</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+
+
+        <p class='message'> Select your move. </p>
+
+
+		<div class='choices'>
+				<img src='./images/rock.png' alt='rock'>
+				<!-- Created by Maciej Swierczek from Noun Project -->
+				<img src='./images/paper.png' alt='paper'>
+				<!-- Created by Maciej Swierczek from Noun Project -->
+				<img src='./images/scissors.png' alt='scissors'>
+				<!-- Created by Maciej Swierczek from Noun Project -->
+		</div> 
+
+        
+        <div class='result'>
+            <p class='result-outcome'>...</p>
+            <p class='result-winner'>...</p>
+        </div>
+
+        
+        <table>
+            <tr>
+                <th colspan='2' scope='col'>Scoreboard</th>
+            </tr>
+            <tr>
+                <th scope='col'>Player</th>
+                <th scope='col'>Computer</th>
+            </tr>
+            <tr>
+                <td id='user-score'>0</td>
+                <td id='computer-score'>0</td>
+            </tr>
+        </table>
+
+
+        <button> START AGAIN </button>
+
+        <script src="main.js"></script>
+    </body>
+</html>

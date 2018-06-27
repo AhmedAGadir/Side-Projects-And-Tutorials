@@ -1,0 +1,42 @@
+<!-- bootstrap template -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Github Finder</title>
+
+    <!-- Bootswatch theme - didnt end up using -->
+    <!-- <link href="https://bootswatch.com/4/litera/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger">
+      <a class="navbar-brand" href="#">Github Finder</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <main role="main" class="container mt-4">
+
+      <div class="search-container">
+        <h1>Search Github Users</h1>
+        <p class="lead">Enter a username to fetch a users profile info</p>
+        <input type="text" id='search-user' class='form-control' placeholder="Github username...">
+      </div>
+      <br>
+      <div id="profile"></div>
+
+    </main>
+    <!-- if jquery was to be included, the script tag would have to be placed on top of (before) the rest of the script tags -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+open up command line 
+
+make sure its nodejs command prompt
+
+locate your folder using
+// cd documents 
+// cd github 
+// cd projects
+etc.
+
+then type in live-server
+and it should work when your retrieving info from your own server (computer) 
+
+when retrieving info from other computers, its gonna include cors knowledge 

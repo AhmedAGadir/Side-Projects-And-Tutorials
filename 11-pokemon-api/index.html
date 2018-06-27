@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	Pokémon API </title>
+	<!-- darkly, superhero, journal all look good -->
+	<link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+	<link rel="shortcut icon" href="images/meowth.png">
+	<!-- 	  <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head> 
+<body class='bg-info'>
+	 
+	 <!-- loading screen -->
+	 <div class="loading-screen">
+		<h2> Loading... </h2>
+		<!-- http://www.freepngimg.com/png/16233-pokemon-free-png-image/download -->
+		<img src='images/loading-pokemon.png'>
+		<!-- https://loading.io/ -->
+	    <img src='images/loader-1.svg'>
+	</div>
+
+	<div class='wrap1'>
+		<!-- landing page -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-warning">
+	  		<a class="navbar-brand" href="#"> Pokémon Battle Finder <img src='images/pokedex.png'></a>
+
+	  		<a class='navbar=brand ml-auto' href='https://github.com/AhmedAGadir' target="_blank">
+				<img src='images/github-logo.png'>
+	  		</a>
+	  	</nav>
+
+		<div class="container mt-5">
+			<header> <h2 class='text-center'> Double Damage Finder </h2> </header>
+			<p>...So your opponent's team has a range of strong pokémon of different types. Not to worry, type in one or more of those types here to find some excellent pokémon which can deal <span class='text-primary'> double damage </span> to your opponent!</p>
+			<form class='form-group'> 
+				<div class="row">	
+					<input type="text" class='form-control col-sm-10' placeholder='Enter a comma separated list of pokémon types...' id='pokemon-types-input'>
+					<input type="submit" class='btn btn-primary btn-block col-sm-2' value='Go'>
+				</div>
+			</form>
+
+
+			<!-- outputs -->
+			<div id="output-header"></div>
+			<div id='output' class='center-block'>
+				<!-- have to remove the below element if using main.js -->
+				<div class="card-columns my-3"></div>
+			</div>
+
+
+			<!-- errors -->
+			<div class='container error my-4 row'>
+	     		<div class="col-md-6">
+	    			<h2 class='text-center'></h2>
+					<p class='text-center'></p>
+    			</div>
+    			<div class='col-md-6'> 
+					<div class="tenor-gif-embed" data-postid="5015204" data-share-method="host" data-width="100%" data-aspect-ratio="1.7659574468085104"><a href="https://tenor.com/view/pikachu-pokemon-crying-sad-tears-gif-5015204">Pikachu Pokemon GIF</a> from <a href="https://tenor.com/search/pikachu-gifs">Pikachu GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    			</div>
+			</div>
+			
+			<div id='loader'></div>
+		</div>
+	</div>
+
+	<audio src='funny.wav'></audio>
+
+	<script src='main-promises.js'></script>
+</body>
+</html>

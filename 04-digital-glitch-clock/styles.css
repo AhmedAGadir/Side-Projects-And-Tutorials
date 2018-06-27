@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	height: 100vh;
+	background: url('images/pattern.svg') center;
+	background-size: 260px;
+  background-color: #CCC;
+	background-blend-mode: multiply;
+	margin: 0 auto;
+}
+
+.main {
+	background: url('images/texture.jpg');
+	background-color: #CCC;
+	background-blend-mode: normal;
+	width: 400px;
+	margin: 0 auto;
+	height: 175px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 80px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.badge {
+	background: url('images/texture.jpg');
+	background-color: #e66357;
+	background-blend-mode: color-burn;
+	color: white;
+	padding: 5px 10px;
+	font-family: 'Share Tech Mono', monospace;
+	letter-spacing: 2px;
+	font-weight: bold;
+	font-size: 1.1em;
+	width: 190px;
+	position: absolute;
+	top: calc(-28px/4) ;
+	text-align: center;
+}
+
+.clock {
+  background: url('images/texture.jpg');
+  background-color: #EBEBEB;
+  background-blend-mode: multiply;
+  font-size: 45px;
+  width: 320px;
+  height: 120px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 3px 3px 0.5px rgba(0,0,0,0.5) ;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  color: #e66357;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+img#anime {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+}
+
+ #alarm-clock {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+  position: relative;
+  top: 120px;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+  transition: 1s all ;
+}
+

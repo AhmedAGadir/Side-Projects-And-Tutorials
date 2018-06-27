@@ -1,0 +1,7 @@
+change the event-handlers / css declarations so that the app works on mobile devices (both CSS and JS files);
+
+error that comes up in console
+change input field so that it breaks onto a new line when editing ? use textarea instead of input?
+clean up the css and js
+
+part2 - https://www.youtube.com/watch?v=bGLZ2pwCaiI&t=6s
