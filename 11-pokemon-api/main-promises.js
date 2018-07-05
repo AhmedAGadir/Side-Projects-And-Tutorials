@@ -26,13 +26,29 @@ function handleError(error) {
 	audio.play();
 }
 
-// init
+// init     --- temp solution otherwise: https://crossorigin.me
 let init = {
 	headers: {'content-type': 'application/json'},
 	mode: 'cors',
 }
 
+
 window.addEventListener('DOMContentLoaded', () => {	
+
+	//loading pokemon image
+	document.querySelector('img.loading-pokemon').src = `http://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' +  (Math.floor(Math.random()*802)+1)).slice(-3)}.png` 
+
+	// remove loading screen
+	function removeLoadingScreen() {
+		setTimeout(()=> {
+			document.querySelector('.loading-screen').style.display = 'none';
+			document.querySelector('.wrap1').style.display = 'initial';
+			document.querySelector('.form-group input').focus();
+		},5000)
+	}
+ 	
+ 	removeLoadingScreen()
+  
 
 	// get pokemon types
 	let p1 = new Promise((resolve, reject) => {
@@ -86,7 +102,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 			localStorage.setItem('doubleDamageInfo', JSON.stringify(doubleDamageInfo));
 			console.log('doubleDamageInfo added to local storage', doubleDamageInfo);
-			removeLoadingScreen();
 		})
 		.catch(error => {
 			handleError(error)
@@ -94,17 +109,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	} else {
 		doubleDamageInfo = JSON.parse(localStorage.getItem('doubleDamageInfo'));
 		console.log('doubleDamageInfo alreay in local storage', doubleDamageInfo);
-		removeLoadingScreen();
 	}
 
-	// remove loading screen
-	function removeLoadingScreen() {
-		setTimeout(()=> {
-			document.querySelector('.loading-screen').style.display = 'none';
-			document.querySelector('.wrap1').style.display = 'initial';
-			document.querySelector('.form-group input').focus();
-		},1500)
-	}
 
 })
 
@@ -216,7 +222,7 @@ function addPokemon(n) {
 		let cards = '';
 
 		pokemonArray.forEach((pokemon, ind) => {
-			
+			console.log(pokemon)
 			let types = '';
 			let dbl_dmg_to = [];
 
@@ -253,7 +259,7 @@ function addPokemon(n) {
 
 			cards += `
 				<div class='card' style="background-image: url('images/${backgroundImg}.png')">
-					<img src='${pokemon.sprites.front_default}' class='card-img-top'>								
+					<img src="http://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' + pokemon.id).slice(-3)}.png" class='card-img-top'>								
 					<div class='card-body'>
 						<ul class=list-group> 
 							<li class='list-group-item text-primary'>name: ${pokemon.name}</li>

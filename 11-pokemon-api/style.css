@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+body {
+  background-color: lightseagreen;
+}
+
 nav img {
 	height: 40px; 
 	margin-left: 10px;
@@ -11,12 +15,12 @@ nav img {
 
 .container {
   margin-top: 4rem;
+  padding: 0 60px;
 }
 
 /* loading screen */
 
 .loading-screen {
-	background: #343A40;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -27,11 +31,6 @@ nav img {
 .loading-screen h2 {
   position: absolute;
   top: 80px;
-}
-
-.loading-screen img[src='images/loading-pokemon.png'] {
-  position: relative;
-  right: 5px;
 }
 
 .loading-screen img[src='images/loader-1.svg'] {
@@ -62,10 +61,6 @@ h2, p, li {
   text-shadow: 1px 1px 1px #343A40;
 }
 
-.card-columns {
-  padding: 0 60px;
-}
-
 .card img {
 	min-width: 160px; 
 	min-height: 160px;
@@ -91,7 +86,6 @@ h2, p, li {
 
 li {
 	font-size: 15px;
-  font-weight: bolder;
   letter-spacing: 0.2px;
 	text-transform: uppercase;
 	text-shadow: 0.5px 0.5px 0.5px ;
@@ -214,4 +208,28 @@ li {
   z-index: 1;
   margin: 0 auto;
   right: calc(50% - 40px);
+}
+
+/* overriding default styling */
+
+
+@media (min-width: 1200px) {
+  .container {
+       max-width: 100%; 
+  }
+}
+@media (min-width: 992px) {
+  .container {
+       max-width: 100%; 
+  }
+}
+@media (min-width: 768px){
+  .container {
+       max-width: 100%; 
+  }
+}
+@media (min-width: 576px) {
+  .container {
+      max-width: 100%; 
+  }
 }
