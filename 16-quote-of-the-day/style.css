@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Open+sans|Teko:300,400');
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* ============== TYPOGRAPHY ============== */
+
+
+body {
+	font-family: 'Open sans', sans-serif;
+	max-width: 1440px;
+  margin: 0 auto;
+  color: #4D5A6F;
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+h1 {	
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 2rem;
+	color: #fff;
+	line-height: 1.5;
+}
+
+ h2 {
+	font-size: 1.8rem;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+	font-size: 1.6rem;
+	font-weight: lighter;
+}
+
+button {
+	font-family: 'Ubuntu', sans-serif;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+
+
+/* ============== BLOCKQUOTE ============== */
+
+
+.inspiration {
+	min-height: 100vh;
+	padding: 10vh 60px;
+	background-color: #faf7ff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.inspiration blockquote {
+	max-width: 650px;
+}
+
+.inspiration blockquote p {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.inspiration blockquote i {
+	font-size: 2rem;
+	margin: 2px;
+}
+
+.inspiration blockquote span.quote-text {
+	font-size: 1.6rem;
+	letter-spacing: 0.4px;
+}
+
+.inspiration blockquote span.quote-footer {
+	display: block;
+	text-align: right;
+}
+
+.inspiration button {
+	margin: 10px 0;
+	float: right;
+	color: white;
+	border: 5px solid #4D5A6F;
+	padding: 2px 4px;
+	background-clip: padding-box;
+	border-image-slice: 9;
+	border-image-repeat: round;
+	outline: none;
+	opacity: 1;
+	font-size: 1rem;
+}
+
+.inspiration button:hover {
+	opacity: 0.9;
+}
+
+.inspiration button:active {
+	opacity: 1;
+	position: relative;
+	top: 3px;
+}
+.inspiration .api-reference {
+	clear: both;
+	text-align: right;
+	display: none;
+	margin-top: 10px;
+	color: #97A3B7;
+}

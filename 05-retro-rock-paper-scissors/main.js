@@ -119,6 +119,10 @@ heading.addEventListener('mouseout',() => {
 	heading.style.cssText = 'transition: 0.2s all smooth; cursor: ;';
 });
 
+window.addEventListener('click', () => {
+	document.querySelector('audio').play();
+	document.querySelector('audio').loop = true;
+})
 
 
 

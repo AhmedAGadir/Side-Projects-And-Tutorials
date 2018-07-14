@@ -36,7 +36,7 @@ let init = {
 window.addEventListener('DOMContentLoaded', () => {	
 
 	//loading pokemon image
-	document.querySelector('img.loading-pokemon').src = `http://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' +  (Math.floor(Math.random()*802)+1)).slice(-3)}.png` 
+	document.querySelector('img.loading-pokemon').src = `http://assets.pokemon.com/assets/cms2/img/pokedex/detail/${('00' +  (Math.floor(Math.random()*806)+1)).slice(-3)}.png` 
 
 	// remove loading screen
 	function removeLoadingScreen() {

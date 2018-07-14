@@ -59,7 +59,7 @@ header input {
 	border-bottom-right-radius: 25px;
 	
   /* remove default styling */
-	border: 0;
+	border: none;
 	box-shadow: none;
 	outline: none;
 
