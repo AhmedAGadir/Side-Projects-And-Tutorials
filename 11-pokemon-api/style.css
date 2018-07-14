@@ -13,6 +13,12 @@ nav img {
 	margin-left: 10px;
 }
 
+@media (max-width: 400px) {
+  nav a[href='https://github.com/AhmedAGadir'] {
+    display: none
+  }
+}
+
 .container {
   margin-top: 4rem;
   padding: 0 60px;

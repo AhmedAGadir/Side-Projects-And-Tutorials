@@ -119,12 +119,15 @@ heading.addEventListener('mouseout',() => {
 	heading.style.cssText = 'transition: 0.2s all smooth; cursor: ;';
 });
 
-window.addEventListener('click', () => {
+// find a way for the audio to autoplay 
+
+window.addEventListener('click', playAudio);
+
+function playAudio() {
 	document.querySelector('audio').play();
 	document.querySelector('audio').loop = true;
-})
-
-
+  window.removeEventListener('click', playAudio);
+}
 
 
 

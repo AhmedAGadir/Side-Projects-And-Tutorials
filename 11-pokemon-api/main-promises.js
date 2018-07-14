@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	if (!localStorage.getItem('doubleDamageInfo')) {
 		p1.then(typeArray => {
 			let promiseArray = typeArray.map(type => {
-				fetch(`https://pokeapi.co/api/v2/type/${type}`, init)
+				return fetch(`https://pokeapi.co/api/v2/type/${type}`, init)
 				.then(res => {
 					if (res.ok) return res.json();
 					else throw new Error(`${res.status}: ${res.statusText}`)
@@ -131,7 +131,7 @@ document.querySelector('.form-group').addEventListener('submit', event => {
 	event.preventDefault();
 
 	let input = document.querySelector('#pokemon-types-input');
-	let inputArray = input.value.replace(/\s*/g, '').split(',');
+	let inputArray = input.value.replace(/\s*/g, '').toLowerCase().split(',');
 	let inputStr = arrToStr(inputArray);
 	
 	// reset
@@ -161,7 +161,6 @@ document.querySelector('.form-group').addEventListener('submit', event => {
 			errorFound = true;
 			return;
 		}
-
 		for (let data of doubleDamageInfo) {
 			if (input == data.type) doubleDamageFrmArray.push(data.dbl_damage_from);
 		}
