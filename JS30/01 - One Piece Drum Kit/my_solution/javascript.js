@@ -9,6 +9,10 @@ window.addEventListener('keydown', event => {
 	else play(event.keyCode)
 })
 
+Array.from(document.querySelectorAll('.drum')).forEach(drum => {
+  drum.addEventListener('click', () => play(drum.getAttribute('data-key')))
+})
+
 function play(keyCode){
 	let drum = document.querySelector(`div[data-key='${keyCode}']`)
 	// could have just used drum.add('active') but wanted to play around a bit
