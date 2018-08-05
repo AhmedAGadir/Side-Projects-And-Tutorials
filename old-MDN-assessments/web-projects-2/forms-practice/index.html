@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en-UK'> 
+    <head>
+         <title> Form Building Fun </title>
+         <meta charset='utf-8'>
+    </head>
+    <body>
+         <h1> A Random Form </h1>
+    
+         <form action='/my-handling-form-page' method='post'> 
+
+           <fieldset>
+             <legend> Part 1 - Travel and Leave Form </legend>
+
+             <div>
+             	<label for="fname">
+             		<strong>Name:</strong>
+             	</label>
+                <br>
+                <input type="text" id="fname" name='user_fname'/>  
+                <br>
+                First
+                <br>               
+                <label for="lname"></label>     
+                <input type="text" id="lname" name='user_lname'/>  
+                <br>
+                Last         
+             </div>
+
+             <div>
+                <label for="employee-number">
+                	<strong>Employee #</strong>
+                </label> 
+                <br>    
+                <input type="text" id="employee-number" name='user_employee_number'/>  
+             </div>
+
+             <div>
+                <label for="mail">
+                	<strong>Mail</strong>
+                </label> 
+                <br>    
+                <input type="email" id="mail" name='user_email'/>  
+             </div>
+
+             <div>
+                <label for="departure">
+                	<strong>Departure</strong>
+                	<abbr title='required'>*</abbr>
+                </label> 
+                <br>    
+                <input type="text" id="departure" name='user_departure'/>
+             </div>
+
+             <div>
+                <label for="phone-number">
+                	<strong>Departure</strong>
+                </label> 
+                <br>    
+                <input type="text" id="phone-number" name='user_phone_number'/>
+             </div>
+
+
+
+
+
+           </fieldset>
+
+
+         </form>
+    </body>
+</html> 

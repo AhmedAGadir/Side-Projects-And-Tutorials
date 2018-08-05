@@ -1,0 +1,473 @@
+<!-- things that need to be done:
+host images properly
+sandwhich button doesnt work
+make some of the pictures change with smaller sizes
+give some elements a max width
+highlight some of the key things you need to do in any webpage on my html/css notes
+fix the floating down button
+understand how to import google fonts, google icons, bootstrap classes, font awesome icons, ionicons etc etc into websites/codepen etc. - what is cdn etc etc-->
+<html lang="en"> 
+<head>
+ 
+  <title> Ahmed A.G </title>
+  <meta charset="utf-8">
+  <meta name="author" contents="Ahmed Abdel Gadir">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <!-- bootstrap /JS stuff is in the settings part -->
+ <!-- for font awesome icons add this -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  </head>
+  
+  
+  
+<body>
+  <!-- navigation bar --> 
+<nav class="navbar navbar-fixed-top navbar-default">
+  <div class="container-fluid">
+
+
+<a class="navbar-brand" href="#">Ahmed A.G.</a>
+    
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+     
+        <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+<header>  
+<h1 ><strong>Hi, I'm Ahmed. <br>I'm a Full Stack JavaScript Developer. 
+<br><span class="glyphicon glyphicon-triangle-bottom"></span>
+</h1> </strong>
+  </header>
+
+  
+  
+ <main>
+   
+  <section id="portfolio">
+  <div class="container-fluid">
+    <h2> Portfolio </h2>
+<div class="row">
+<div class="col-md-4 col-sm-6"><a href="#" target="_blank"><div class="thumbnail">
+    
+    <p data-height="339" data-theme-id="0" data-slug-hash="pWXMpq" data-default-tab="result" data-user="AhmedAGadir" data-embed-version="2" data-pen-title="pWXMpq" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/AhmedAGadir/pen/pWXMpq/">pWXMpq</a> by Ahmed (<a href="https://codepen.io/AhmedAGadir">@AhmedAGadir</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+  
+ <h3>Madinah tribute page</h3>
+   <p>My first pen - a tribute to the beautiful city of the noble Prophet Muhammad (pbuh).</p>
+  </div></a></div>
+  
+<div class="col-md-4 col-sm-6"><a href="#" target="_blank"><div class="thumbnail">
+    <div class="bkg-bubbles">
+      <i class="material-icons md-48" id="project2">laptop_chromebook</i>
+  </div>
+ <h3>Project</h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+    </div></a></div>
+<div class="col-md-4 col-sm-6"> <a href="#" target="_blank"><div class="thumbnail">
+    <div class="bkg-bubbles"><i class="material-icons md-48" id="project3">laptop_chromebook</i>
+  </div>
+<h3>Project </h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+     </div></a></div>
+ 
+  
+<div class="col-md-4 col-sm-6"> <a href="#" target="_blank"><div class="thumbnail">
+  <div class="bkg-bubbles"><i class="material-icons md-48" id="project4">android</i> </div>
+  <h3>Project</h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+     </div></a></div>
+<div class="col-md-4 col-sm-6"> <a href="#" target="_blank"><div class="thumbnail">
+  <div class="bkg-bubbles"> <i class="material-icons md-48" id="project5">android</i> </div>
+ <h3>Project</h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+     </div></a></div>
+<div class="col-md-4 col-sm-6"> <a href="#" target="_blank"><div class="thumbnail">
+    <div class="bkg-bubbles"><i class="material-icons md-48" id="project6">android</i>
+  </div>
+  <h3>Project</h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+    </div></a></div>
+<div class="col-md-4 col-sm-6"><a href="#" target="_blank"> <div class="thumbnail">
+    <div class="bkg-bubbles"><i class="material-icons md-48" id="project7">language</i> 
+  </div>
+<h3>Project </h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p>
+     </div></a></div>
+<div class="col-md-4 col-sm-6"> <a href="#" target="_blank"><div class="thumbnail">
+    <div class="bkg-bubbles"><i class="material-icons md-48" id="project8">language</i> 
+  </div>
+  <h3>Project </h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+     </div></a></div>
+<div class="col-md-4 col-sm-12"> <a href="#" target="_blank"><div class="thumbnail">
+    <div class="bkg-bubbles"><i class="material-icons md-48" id="project9">language</i> 
+  </div>
+<h3>Project</h3>
+   <p> Lorem ipsum dolor sit amet, dignissim elementum maecenas sapien pharetra, in quis urna purus est, sem wisi conubia enim rhoncus augue mollis, commodo nibh vestibulum habitasse. Sapien mi non vestibulum, erat mauris sed, rutrum pulvinar sed rhoncus, justo ut, proin ligula ac. Impedit vulputate.</p> 
+  </div></a></div>
+  </div> </div>
+   </section>
+   
+   <section id="about"> 
+   <div class="container-fluid">
+     <h2> About </h2>
+   <!-- not too sure about this pic  <div class="col-md-6 col-sm-6">
+      
+     </div> -->
+     
+<div class="row">
+  <div class="col-md-1"> 
+  <i class="fa fa-html5" aria-hidden="true"></i>
+   <i class="fa fa-css3" aria-hidden="true"></i>
+  </div>
+    <div class="col-md-6"> 
+      <h2> to be continued </h2>
+      <p> 
+      <ul>
+     <li> I've grown up in London. </li> 
+     <li> always had a knack for maths and problem solving </li> 
+     <li> graduated in Mechanical Engineering this year from QMUL </li> 
+     <li> Learning how to programme mainly with FCC and MDN </li> 
+     <li> Super enthusiastic to become a software engineer. </li> 
+     <li> My other passions include Arabic language, martial arts and reading</li> 
+           </ul>
+           </p> 
+  </div> 
+     
+       <div class="col-md-5">
+        <img src="https://i.imgur.com/PfS7Qdo.jpg"  class="img-responsive" alt="me in morocco"></img>
+       </div>
+     
+      </div>
+     
+     </div>
+    </section>
+  
+   <section id="contact"> 
+     <div class="container-fluid">
+     <h2> Contact </h2>   
+   <div class="row">
+     <div class="col-md-2 col-sm-6">
+<a href="#" target="_blank">      
+  <i class="fa fa-google" aria-hidden="true"></i></a>
+     </div>
+     <div class="col-md-2 col-sm-6">
+<a href="https://www.linkedin.com/in/ahmed-abdel-gadir-9b0b3912a/" target="_blank">            
+<i class="fa fa-linkedin" aria-hidden="true"></i></a>
+     </div>
+     <div class="col-md-2 col-sm-6">
+<a href="https://www.freecodecamp.org/ahmedagadir" target="_blank">           
+<i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
+     </div>
+     <div class="col-md-2 col-sm-6">
+<a href="#" target="_blank">            
+<i class="fa fa-facebook" aria-hidden="true"></i></a>
+     </div>
+     <div class="col-md-2 col-sm-6">
+<a href="https://codepen.io/AhmedAGadir/" target="_blank">   
+<p><i class="fa fa-codepen" aria-hidden="true"></i></a>
+     </div>
+     <div class="col-md-2 col-sm-6">
+<a href="https://github.com/AhmedAGadir" target="_blank">            
+<i class="fa fa-github" aria-hidden="true"></i></a>
+     </div>
+       </div>
+     </div>
+           <div class="container-fluid">
+                    <div class="bar"></div>
+     </div>
+  </section>
+  </main>
+
+<footer>
+  <p>© 2017-2018 All Rights Reserved</p>
+</footer>
+  </body>  
+
+  /* some basic setup */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  line-height: 1.5 !important;
+}
+
+h1 {
+  font-size: 3rem
+}
+
+h2 {
+  font-size:2.5rem; 
+  margin: 5% 0
+}
+
+h3 {
+  font-size:1.8rem; 
+  margin: 3% 0;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  text-align: center
+}
+
+p, p ul {
+  font-size:1.2rem;
+}
+
+ a {
+   text-decoration: none;
+   color: #303030;
+}
+
+a:link {
+  text-decoration: none
+}
+
+a:visited{
+  text-decoration: none;
+  color: #303030;
+}
+
+/*dont quite get this yet
+.glyphicon.glyphicon-triangle-bottom {
+  position: fixed;
+  top: 40%; left: 10%;} */
+
+/*navigation bar*/
+
+.navbar, .navbar-brand {
+  position: fixed; /*needs to be fixed, not absolute*/
+  padding: 1rem ;
+  opacity: 0.75;
+  font-size:1.5rem; 
+  font-weight: bold;
+}
+
+.navbar-brand {
+  padding: 1.5rem;
+}
+
+ul.nav{
+  display: inline-block;
+}
+
+ /*-- header--*/
+
+header {
+  background-image: url(https://i.imgur.com/8WRJsKO.jpg);
+    /* to stop the background from tiling as the viewport gets bigger and small you must include 2 values for the background-size, 100% is the best so the whole image fits within the box */
+  background-size: 100% 100%;
+}
+
+header h1 {
+  padding: 20% 0 20% 0;
+  color: white;
+}
+
+.glyphicon.glyphicon-triangle-bottom {
+  opacity: 0.8;
+  position: fixed; 
+  top:35rem;
+}
+
+/* portfolio */
+
+#portfolio {
+  background-image: url(https://www.xmple.com/wallpaper/blue-turquoise-gradient-linear-1920x1080-c2-191970-2ff0a8-a-165-f-14.svg);
+  background-size: 100% 100%;
+  background-color: yellow;
+}
+
+#portfolio .col-md-4 {
+  text-align: center;
+}
+
+#portfolio h2 {
+  color: white;
+  font-weight: bold;
+}
+
+.material-icons.md-48 { 
+  font-size: 8rem; 
+  padding: 15% 0;
+  width: 100%;
+  background: url(https://www.xmple.com/wallpaper/blue-turquoise-gradient-linear-1920x1080-c2-191970-2ff0a8-a-165-f-14.svg);
+  background-size: 100%;
+  /*googled how to do this */
+  color:transparent;
+  -webkit-font-smoothing:antialiased;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin:0}
+
+.bkg-bubbles {
+  background-image: url(https://i.imgur.com/1g0uTGx.jpg);;
+}
+
+
+#portfolio .col-md-4 p {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+#portfolio .col-md-4 h3 {
+  padding-top: 1rem;
+}
+
+.col-md-4 .thumbnail {
+  max-width: 600px;
+}
+
+.row .col-md-4 .thumbnail {
+  padding: 0;
+}
+
+#portfolio .thumbnail:hover {  
+  background-color: #15B3C5;
+  color: white;
+  border-color: #15B3C5;
+  font-weight: bolder;
+  box-shadow: 0 0 1.5rem white;
+}
+
+#portfolio .thumbnail:focus {  
+  background-color: #15B3C5;
+  color: white;
+  border-color: #15B3C5;
+  font-weight: bolder;
+  box-shadow: 0 0 1.5rem white;
+}
+
+/*fixing the different height columns - google fix */
+#portfolio .row{
+    overflow: hidden; 
+}
+
+#portfolio [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+/*about section */
+
+#about {
+  margin-top: 0.5rem; 
+  margin-bottom: 0.5rem;
+  background-image: url(https://www.xmple.com/wallpaper/blue-turquoise-gradient-linear-1920x1080-c2-191970-2ff0a8-a-165-f-14.svg);
+  background-size: 100%;
+  padding-bottom: 5%;
+}
+
+#about h2 {
+  font-weight: bold; 
+  color: #303030;
+}
+
+
+#about p, #about ul {
+  font-size: 1.2rem
+}
+
+#about .col-md-6 {
+  margin: 0 auto;
+  border: 0.25rem solid #303030;
+  background-color: white;
+}
+
+#about img {
+  display: inline-block;
+  margin: 0 auto;
+  border: 0.25rem solid #303030;
+}
+
+#about i {
+  font-size: 5rem;
+  padding: 2rem;
+}
+
+#about .col-md-1 {
+  background-color: white;
+  border: 0.25rem solid #303030
+}
+
+/* contact section */
+
+#contact {
+  background-image: url(https://i.imgur.com/XKmUSe9.jpg);
+  background-size: 100%;
+  background-repeat: no repeat;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+#contact h2 {
+  color: ;
+  font-weight: bold;
+}
+
+#contact .row {
+  background-color:hsla(186, 0%, 87%, 0.4);
+}
+
+#contact i {
+  font-size: 10rem;
+  padding: 2rem;
+  height: 100%;
+  color: #303030;
+}
+
+#contact i.fa-facebook {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+#contact i:hover {
+  color:white; 
+  background-color:#15B3C5;
+  font-weight: bolder;}
+
+#contact i:focus {
+  color:white; 
+  background-color:#15B3C5;
+  font-weight: bolder;}
+
+#contact .col-md-2 {
+  /*dont know how to use these properly */
+  max-width: 130px;
+  margin: 0 auto;
+}
+
+/*footer*/
+
+footer {
+  height: 7.5rem;
+  background-color: #303030;
+  border-top: 0.2rem solid #26ABBA;
+}
+
+footer p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+}
