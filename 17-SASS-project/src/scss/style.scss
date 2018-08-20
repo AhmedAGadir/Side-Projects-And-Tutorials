@@ -114,7 +114,6 @@ nav {
 		}
 	}
 
-
 	@media (max-width: 965px) {
 		
 		.button-wrap {
@@ -139,22 +138,21 @@ nav {
 
 /* ======= SANDWHICH BUTTON ANIMATION OPEN ===== */
 
+#sandwhich.open span {
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
 #sandwhich.open .bar1 {
 	animation-name: bar-one-open;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
 }
 
-#sandwhich.open span.bar2 {
+#sandwhich.open .bar2 {
 	animation-name: bar-two-open;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
 }
 
-#sandwhich.open span.bar3 {
+#sandwhich.open .bar3 {
 	animation-name: bar-three-open;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
 }
 
 @keyframes bar-one-open {
@@ -190,52 +188,50 @@ nav {
 
 /*====== SANDWHICH BUTTON ANIMATION CLOSE =====*/ 
 
+#sandwhich.close span {
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+	// 	animation-direction: reverse; // wanted to use this better
+}
+
 #sandwhich.close .bar1 {
 	animation-name: bar-one-close;
-	animation-duration: 0.4s;
-	animation-fill-mode: forwards;
-	animation-direction: reverse;
 }
 
-#sandwhich.close span.bar2 {
+#sandwhich.close .bar2 {
 	animation-name: bar-two-close;
-	animation-duration: 0.4s;
-	animation-fill-mode: forwards;
-	animation-direction: reverse;
 }
 
-#sandwhich.close span.bar3 {
+#sandwhich.close .bar3 {
 	animation-name: bar-three-close;
-	animation-duration: 0.4s;
-	animation-fill-mode: forwards;
-	animation-direction: reverse;
 }
+
 @keyframes bar-one-close {
-	0% {
+	100% {
 		transform: rotate(0deg);
 		top: 0;
 	}
-	100% {
+	0% {
 		transform: rotate(45deg);
 		top: 0.7rem;
 	}
 }
 
 @keyframes bar-two-close { 
-	0% {
+	100% {
 		opacity: 1;
 	}
-	100% {
+	0% {
 		opacity: 0;
 	}
 }
 
 @keyframes bar-three-close { 
-	0% {
+	100% {
 		top: 0;
 		transform: rotate(0deg);
 	}
-	100% {
+	0% {
 		top: -0.7rem;
 		transform: rotate(-45deg);
 	}
