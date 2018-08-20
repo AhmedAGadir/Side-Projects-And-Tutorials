@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- note to self: this fixes the errors in resizing in google dev tools -->
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Retro:Expo | The Vintage & Retro Show</title>
+</head>
+<body>
+
+
+	<!-- TO DO:
+	- FADE UP ANIMATIONS
+	- BUTTON ANIMATION-->
+
+	<nav>
+		<div class="button-wrap">
+			<button id="sandwhich">
+	    		<span class="bar1"></span>
+	    		<span class="bar2"></span>
+	    		<span class="bar3"></span>
+	 		</button>
+		</div>
+
+		<ul>
+			<li class="active"><a href="#">home</a></li>
+			<li><a href="#">visiting</a></li>
+			<li><a href="#">exhibitors</a></li>
+			<li><a href="#">gallery</a></li>
+			<li><a href="#">news</a></li>
+			<li><a href="#">conference</a></li>
+		</ul>	
+		
+		<a href="#" class="register">register for free</a>
+	</nav>
+
+	<header>
+		<img src="./assets/logo_retroexpo.png" alt="logo"> 
+		<h1>the vintage & retro show</h1>
+	</header>
+
+	<main>
+		<h2>a marketplace of over 100 retro, products and services</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		</p>
+
+		<div class="cards">
+			<div class="card">
+				<img src="./assets/image_car.png" alt="car-img">
+				<h3>exhibitor list</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+				<div class="more">
+					<a href="#">learn more</a>
+				</div>
+			</div>
+			<div class="card">
+				<img src="./assets/image_skates.png" alt="skates-img">
+				<h3>roll with it</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+				<div class="more">
+					<a href="#">learn more</a>
+				</div>
+			</div>
+			<div class="card">
+				<img src="./assets/image_typewriter.png" alt="typewriter-img">
+				<h3>family fun</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+				<div class="more">
+					<a href="#">learn more</a>
+				</div>
+			</div>	
+		</div>
+
+		<h2>sponsors</h2>
+		<img src="./assets/image_sponsors.png" alt="sponsors">
+		
+	</main>
+
+	<footer>
+		<div class="footer-card">
+			<h3>contact us</h3>
+			<hr/>
+			<p>Marketing and general enquires:<br/>info@retroexpo.com</p>
+			<br/>
+			<p>Sales  enquires:<br/>sales@retroexpo.com</p>
+		</div>
+		<div class="footer-card">
+			<h3>when & where</h3>
+			<hr/>
+			<p><span class="date">28 September</span> <span class="time">09:30-18:00</span></p>
+			<p><span class="date">28 September</span> <span class="time">09:30-18:00</span></p>
+		</div>
+		<div class="footer-card">
+			<h3>quick links</h3>
+			<hr/>
+			<p><a href="#">Book a stand</a></p>
+			<p><a href="#">Add dates to your diary</a></p>
+		</div>
+	</footer>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	<script>
+		
+		// ========= SANDWHICH BUTTON ==========
+
+		let sandwhichButton = document.getElementById('sandwhich');
+		let toggle = true;
+
+		sandwhichButton.addEventListener('click', () => {
+
+			Array.from(sandwhichButton.children).forEach(span => span.style.animationName = '');
+			sandwhichButton.className = (toggle) ? 'open' : 'close';
+			toggle = !toggle;
+
+
+			let ulclassList = document.querySelector('nav ul').classList;
+			ulclassList.contains('visible') ? ulclassList.remove('visible') : ulclassList.add('visible');
+
+		});
+
+	</script>
+</body>
+</html>
