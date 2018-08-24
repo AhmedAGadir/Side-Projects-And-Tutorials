@@ -1,0 +1,280 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	margin: 0 2rem;
+	background-color: #FFF;
+}
+
+body {
+	background-color: #DDD;
+	font-family: 'Helvetica', sans-serif;
+	padding: 5rem 7rem;
+	line-height: 1.3;
+}
+
+@media (max-width: 425px) {
+	html {
+		font-size: 8px;
+		margin: 0;
+	}
+	body {
+		padding: 5rem 3rem;
+	}
+}
+
+@media (min-width: 1700px) {
+	html {
+		font-size: 20px; /*For x-large screens */
+	}
+}
+
+hr {
+	margin: 3rem 0;
+	color: #AAA;
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 2.5rem;
+	position: relative;
+	top: -1rem;
+	left: -4rem;
+} 
+
+@media (max-width: 768px) {
+	h1 {
+		position: unset;
+	}
+}
+
+/* ==== SWIPER ==== */
+
+.additional-wrapper {
+	position: relative;
+}
+
+@media (max-width: 425px) {
+	.additional-wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+.swiper-container {
+     position: unset; 
+}
+
+.swiper-slide {
+	width: 30%;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-image: none;
+	background-color: #524F4C;
+	color: #fff;
+	font-size: 3rem;
+	height: 8rem;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-25%);
+}
+
+.swiper-button-prev {
+	left: -6rem;
+}
+
+.swiper-button-next {
+	right: -6rem;
+}
+
+/* ==== ==== */
+
+.puzzle-form-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.puzzle-form-wrap .puzzle,
+.puzzle-form-wrap .form-container {
+	height: 55rem;
+	width: 49%;
+	margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+	.puzzle-form-wrap {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.puzzle-form-wrap .puzzle,
+	.puzzle-form-wrap .form-container {
+		width: 100%;
+	}
+}
+
+/* ==== PUZZLE ==== */
+
+.puzzle-form-wrap .puzzle {
+	background-image: url('assets/puzzle.jpg');
+	background-position: 80% 82%;
+	background-size: cover;
+	background-color: #bbb;
+	background-blend-mode: overlay;
+	display: flex;
+	align-items: flex-end;
+}
+
+.puzzle p {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	font-size: 2rem;
+	padding: 2rem;
+}
+
+
+/* ==== FORM ==== */
+
+.form-container {
+	background-color: #FFF;
+	padding: 3rem 2rem;
+}
+
+.form-container > div {
+	display: inline-block;
+	font-size: 2rem;
+	background-color: #AAA;
+	color: #FFF;
+	padding: 0.4rem 1.5rem;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+.form-container > div.active {
+	background-color: #717171;
+}
+
+.form-container > div:active,
+.form-container button:active {
+	opacity: 0.8;
+}
+
+.form-container button {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+
+	font-size: 2rem;
+	background-color: #AAA;
+	color: #FFF;
+	cursor: pointer;
+	width: 9rem;
+	height: 3.5rem;
+}
+
+form {
+	margin-top: 0.1rem;
+	border-top: 1px solid #AAA;
+	font-size: 1.5rem;
+	padding-top: 2rem;
+	height: 22rem;
+	position: relative;
+}
+
+form > div {
+	transition: 2s all ease-in; 
+	position: absolute; 
+}
+
+form label {
+	display: block;
+}
+
+form input {
+	width: 30rem;
+	height: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+form button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+
+/* ==== FORM ANIMATION ==== */
+
+form > div.visible {
+	animation-name: slide-in;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+	0% {
+		left: 40rem; 
+		opacity: 0;
+	}
+	100% {
+		left: 0rem;
+		opacity: 1;
+	}
+}
+
+form > div:not(.visible) {
+	animation-name: slide-out;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+	0% {
+		left: 0rem; 
+		opacity: 1;
+	}
+	100% {
+		left: -40rem;
+		opacity: 0;
+	}
+}
+
+/* ==== FOOTER ==== */
+
+footer p {
+	text-align: center;
+	font-size: 2rem;
+	position: relative;
+	top: -1.5rem;
+}
+
+
+
+/* ==== COLOR PALETTE ==== 
+
+DARK-GREY: #524F4C;
+LIGHT-GREY: #DDD;
+ACTIVE-STEP-DIV: #717171;
+
+*/
