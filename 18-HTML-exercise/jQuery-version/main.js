@@ -38,6 +38,7 @@ $(document).ready(function() {
 	var tabs = $('.form-container > div');
 	var button = $('form button');
 
+	// initialize 
 	$('form > div:not(.visible)').hide();
 
 	$(button).click(function() {

@@ -222,43 +222,6 @@ form button {
 	right: 0;
 }
 
-
-/* ==== FORM ANIMATION ==== */
-
-/*form > div.visible {
-	animation-name: slide-in;
-	animation-duration: 500ms;
-	animation-fill-mode: forwards;
-}
-
-@keyframes slide-in {
-	0% {
-		left: 40rem; 
-		opacity: 0;
-	}
-	100% {
-		left: 0rem;
-		opacity: 1;
-	}
-}
-
-form > div:not(.visible) {
-	animation-name: slide-out;
-	animation-duration: 500ms;
-	animation-fill-mode: forwards;
-}
-
-@keyframes slide-out {
-	0% {
-		left: 0rem; 
-		opacity: 1;
-	}
-	100% {
-		left: -40rem;
-		opacity: 0;
-	}
-}*/
-
 /* ==== FOOTER ==== */
 
 footer p {
