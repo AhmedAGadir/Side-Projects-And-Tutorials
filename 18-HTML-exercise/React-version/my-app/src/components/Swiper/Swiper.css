@@ -1,0 +1,45 @@
+.additional-wrapper {
+	position: relative;
+}
+
+@media (max-width: 425px) {
+	.additional-wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+.swiper-container {
+     position: unset; 
+}
+
+.swiper-slide {
+	width: 30%;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	background-image: none;
+	background-color: #524F4C;
+	color: #fff;
+	font-size: 3rem;
+	height: 8rem;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-25%);
+}
+
+.swiper-button-prev {
+	left: -6rem;
+}
+
+.swiper-button-next {
+	right: -6rem;
+}
