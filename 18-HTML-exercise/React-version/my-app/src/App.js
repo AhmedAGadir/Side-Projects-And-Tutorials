@@ -1,29 +1,61 @@
-import React, { Component } from 'react';
-import './App.css';
-
+import React, { Component, Fragment } from 'react';
 import Swiper from './components/Swiper/Swiper';
+import Puzzle from './components/Puzzle/Puzzle';
+import Form from './components/Form/Form';
+
 
 class App extends Component {
-  render() {
-    return (
-    	<div className="App">
-        	<h1>Page Title</h1>
-        
-        	<main>
-        		<Swiper />
-        		<hr/>
-        		<div className="puzzle-form-wrap">
-        		</div>
-        	</main>
 
-        	<footer>
-        		<hr/>
-        		<p>Page footer</p>
-        	</footer>
+	static defaultProps = {
+		text: '	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quibusdam, quam iste aliquam esse cupiditate repellendus fugit iusto perspiciatis voluptas rem veniam ab modi, quia quo odit architecto, distinctio dolores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore voluptatibus, nostrum quia quisquam quaerat',
+		formFields: [
+		    [{
+		        title: 'First Name',
+		        type: 'text',
+		      },
+		      {
+		        title: 'Last Name',
+		        type: 'text',
+		      }
+		    ],
+		    [{
+		        title: 'Telephone Number',
+		        type: 'tel',
+		        pattern: "/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/",
+		      },
+		      {
+		        title: 'Email Address',
+		        type: 'email',
+		      }
+		    ]
+		  ]
+		};
 
-    	</div>
-    );
-  }
+
+	render() {
+		return (
+			<Fragment>
+
+		    	<h1>Page Title</h1>
+	
+	    		<Swiper />
+
+	    		<hr/>
+
+	    		<div className="puzzle-form-wrap">
+	    			<Puzzle text={this.props.text}/>
+	    			<Form formFields={this.props.formFields}/>
+	    		</div>
+
+		    	<hr/>
+		    	
+		    	<footer>
+		    		<p>Page footer</p>
+		    	</footer>
+
+			</Fragment>
+		);
+	}
 }
 
 export default App;

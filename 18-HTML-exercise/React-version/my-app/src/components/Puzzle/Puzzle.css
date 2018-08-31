@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+	.puzzle {
+		width: 100%;
+	}
+}
+
+.puzzle {
+	height: 55rem;
+	width: 49%;
+	margin: 1rem 0;
+	
+	background-image: url('../../assets/puzzle.jpg');
+	background-position: 80% 82%;
+	background-size: cover;
+	background-color: #bbb;
+	background-blend-mode: overlay;
+	display: flex;
+	align-items: flex-end;
+}
+
+.puzzle p {
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	font-size: 2rem;
+	padding: 2rem;
+}
