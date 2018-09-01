@@ -1,6 +1,6 @@
-// I still needed to include the Swiper CDN  in my index.html file for this to work
+// [NOTE] I still needed to include the Swiper CDN  in my index.html file for this to work
 // perhaps it was an issue with the setup
-// [NOTE] come back to later and fix
+// come back to later and fix
 
 import Swiper from 'swiper';
 

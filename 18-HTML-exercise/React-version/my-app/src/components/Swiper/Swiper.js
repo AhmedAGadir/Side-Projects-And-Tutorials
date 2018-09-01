@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import swiperInit from './SwiperAPI';
+import swiperInit from './SwiperInit';
 import './Swiper.css';
 
 

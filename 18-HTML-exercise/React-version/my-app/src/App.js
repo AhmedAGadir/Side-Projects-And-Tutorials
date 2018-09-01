@@ -8,7 +8,7 @@ class App extends Component {
 
 	static defaultProps = {
 		text: '	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quibusdam, quam iste aliquam esse cupiditate repellendus fugit iusto perspiciatis voluptas rem veniam ab modi, quia quo odit architecto, distinctio dolores! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore voluptatibus, nostrum quia quisquam quaerat',
-		formFields: [
+		formSteps: [
 		    [{
 		        title: 'First Name',
 		        type: 'text',
@@ -31,28 +31,18 @@ class App extends Component {
 		  ]
 		};
 
-
 	render() {
 		return (
 			<Fragment>
-
 		    	<h1>Page Title</h1>
-	
 	    		<Swiper />
-
 	    		<hr/>
-
 	    		<div className="puzzle-form-wrap">
 	    			<Puzzle text={this.props.text}/>
-	    			<Form formFields={this.props.formFields}/>
+	    			<Form formSteps={this.props.formSteps}/>
 	    		</div>
-
 		    	<hr/>
-		    	
-		    	<footer>
-		    		<p>Page footer</p>
-		    	</footer>
-
+		    	<footer><p>Page footer</p></footer>
 			</Fragment>
 		);
 	}

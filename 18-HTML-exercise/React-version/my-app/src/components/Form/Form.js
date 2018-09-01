@@ -1,53 +1,91 @@
 import React, { Component } from 'react';
+import Tab from './Tab';
+import Step from './Step';
 import uuid from 'uuid';
+import './Form.css';
+
+// To do:
+// - make sections actually dismount or fade out using lifecycle components
+// - add proptypes
+// - better use of lifecycle components
+// - css modules for styling
+// - 2 way binding for forms? is it neccessary?
+// - more -- read react docs
 
 class Form extends Component {
+
+	state = {
+		currentStep: 1,
+		buttonType: 'button',
+		buttonText: 'Next',
+	}
+
+	tabClickHandler = tabNumber => {
+		this.setState({
+			currentStep: tabNumber,
+		})
+	}
+
+	buttonClickHandler = e => {
+		if (this.state.currentStep !== this.props.formSteps.length) {
+			e.preventDefault();
+			this.setState((prevState, props) => ({
+				currentStep: prevState.currentStep + 1,
+			}))
+		}
+	}
+
+	static getDerivedStateFromProps(nextProps, prevState) {
+		let buttonType, buttonText;
+
+		if (prevState.currentStep == nextProps.formSteps.length) {
+			buttonType = 'submit';
+			buttonText = 'Submit';
+		} else {
+			buttonType = 'button';
+			buttonText = 'Next';
+		}
+
+		return {
+			currentStep: prevState.currentStep,
+			buttonType: buttonType,
+			buttonText: buttonText,
+		}
+	}
+	
 	render() {
-
-
 		let tabs = [];
-		let sections = [];
+		let formSteps = [];
 
-		this.props.formFields.forEach((section, ind) => {
- 			
-			tabs.push(<div className={ind === 0 ? 'active' : null} key={uuid.v4()}>{'Step ' + (ind+1)}</div>);
-
-			sections.push((
-				<div id={'step'+(ind+1)} key={uuid.v4()}>
-					{section.map((field, ind) => {
-					
-						let id = field.title.toLowerCase().replace(/\s/, '_');
-						let name = 'user_' + id;
-
-						return (
-							<div className={ind === 0 ? 'active' : null} key={uuid.v4()}>
-								<label htmlFor={id}>{field.title}</label>
-								<input 
-									type={field.type} 
-									id={id} 
-									pattern={field.pattern ? field.patten : null} 
-									name={name}
-									required/> 
-							</div>
-						)
-					
-					})}
-				</div>
-			))
-
+		this.props.formSteps.forEach((step, ind) => {
+			let uniqueId = uuid.v4();
+			tabs.push(
+				<Tab 
+					key={uniqueId}
+					num={ind+1}
+					currentStep={this.state.currentStep} 
+					clicked={this.tabClickHandler} />
+			);
+			
+			formSteps.push(
+				<Step 
+					key={uniqueId}
+					num={ind+1} 
+					currentStep={this.state.currentStep}
+					formData={step} />
+			);
 		})
 
 		return (
-
 			<div className="form-container">
 				{tabs}
 				<form action="#" method="POST">
-					{sections}
-					<button type="submit">Next</button>
-					}
+					{formSteps}
+					<button type={this.state.buttonType} onClick={this.buttonClickHandler}>
+						{this.state.buttonText}
+					</button>
 				</form>
 			</div>
-
 		)
 	}
 }

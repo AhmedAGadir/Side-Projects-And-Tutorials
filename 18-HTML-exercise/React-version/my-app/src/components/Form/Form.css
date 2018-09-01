@@ -1,0 +1,120 @@
+.form-container {
+	height: 55rem;
+	width: 49%;
+	margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+	.form-container {
+		width: 100%;
+	}
+}
+
+.form-container {
+	background-color: #FFF;
+	padding: 3rem 2rem;
+}
+
+.form-container > div {
+	display: inline-block;
+	font-size: 2rem;
+	background-color: #AAA;
+	color: #FFF;
+	padding: 0.4rem 1.5rem;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+.form-container > div.active {
+	background-color: #717171;
+}
+
+.form-container > div:active,
+.form-container button:active {
+	opacity: 0.8;
+}
+
+.form-container button {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+
+	font-size: 2rem;
+	background-color: #AAA;
+	color: #FFF;
+	cursor: pointer;
+	width: 9rem;
+	height: 3.5rem;
+}
+
+form {
+	margin-top: 0.1rem;
+	border-top: 1px solid #AAA;
+	font-size: 1.5rem;
+	padding-top: 2rem;
+	height: 22rem;
+	position: relative;
+}
+
+form > div {
+	transition: 2s all ease-in; 
+	position: absolute; 
+}
+
+form label {
+	display: block;
+}
+
+form input {
+	width: 30rem;
+	height: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+form button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+
+/* ==== FORM ANIMATION ==== */
+
+form > div.visible {
+	animation-name: slide-in;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+	0% {
+		left: 40rem; 
+		opacity: 0;
+	}
+	100% {
+		left: 0rem;
+		opacity: 1;
+	}
+}
+
+form > div:not(.visible) {
+	animation-name: slide-out;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-out {
+	0% {
+		left: 0rem; 
+		opacity: 1;
+	}
+	100% {
+		left: -40rem;
+		opacity: 0;
+	}
+}
