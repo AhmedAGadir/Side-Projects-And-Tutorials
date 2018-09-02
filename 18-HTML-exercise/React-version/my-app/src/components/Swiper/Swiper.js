@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import swiperInit from './SwiperInit';
 import './Swiper.css';
+import swiperInit from './SwiperInit';
 
 
 class Swiper extends Component {
