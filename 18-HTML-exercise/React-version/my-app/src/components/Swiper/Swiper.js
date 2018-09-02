@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// fix this later
+import '../../../node_modules/swiper/dist/css/swiper.min.css'
 import './Swiper.css';
 import swiperInit from './SwiperInit';
 
