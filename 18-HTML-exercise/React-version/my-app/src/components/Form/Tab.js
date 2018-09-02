@@ -2,7 +2,7 @@ import React from 'react';
 
 const tab = props => {
 
-	const changeHandler = () => {
+	const changeHandler = function() {
 		props.clicked(props.num)
 	}
 

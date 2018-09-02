@@ -85,7 +85,7 @@ form button {
 
 /* ==== FORM ANIMATION ==== */
 
-form > div.visible {
+form > div {
 	animation-name: slide-in;
 	animation-duration: 500ms;
 	animation-fill-mode: forwards;
@@ -102,7 +102,7 @@ form > div.visible {
 	}
 }
 
-form > div:not(.visible) {
+/*form > div:not(.visible) {
 	animation-name: slide-out;
 	animation-duration: 500ms;
 	animation-fill-mode: forwards;
@@ -117,4 +117,4 @@ form > div:not(.visible) {
 		left: -40rem;
 		opacity: 0;
 	}
-}
+}*/

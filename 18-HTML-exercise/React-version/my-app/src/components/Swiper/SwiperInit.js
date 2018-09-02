@@ -34,7 +34,7 @@ var swiperInit = function() {
 		  }
 	});
 
-	console.log('swiper initiated', Swiper)
+	console.log('swiper initiated')
 
 }
 

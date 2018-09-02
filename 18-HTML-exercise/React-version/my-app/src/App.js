@@ -28,8 +28,8 @@ class App extends Component {
 		        type: 'email',
 		      }
 		    ]
-		  ]
-		};
+		]
+	};
 
 	render() {
 		return (

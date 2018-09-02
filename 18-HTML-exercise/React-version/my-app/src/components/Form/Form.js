@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tab from './Tab';
 import Step from './Step';
+import Button from './Button';
 import uuid from 'uuid';
 import './Form.css';
 
@@ -14,42 +15,18 @@ import './Form.css';
 
 class Form extends Component {
 
-	state = {
-		currentStep: 1,
-		buttonType: 'button',
-		buttonText: 'Next',
+	state = {currentStep: 1}
+
+	tabClickHandler = tabNum => {
+		this.setState({currentStep: tabNum})
 	}
 
-	tabClickHandler = tabNumber => {
-		this.setState({
-			currentStep: tabNumber,
-		})
-	}
-
-	buttonClickHandler = e => {
-		if (this.state.currentStep !== this.props.formSteps.length) {
+	buttonClickHandler = (e, lastTab) => {
+		if (!lastTab) {
 			e.preventDefault();
 			this.setState((prevState, props) => ({
 				currentStep: prevState.currentStep + 1,
 			}))
-		}
-	}
-
-	static getDerivedStateFromProps(nextProps, prevState) {
-		let buttonType, buttonText;
-
-		if (prevState.currentStep == nextProps.formSteps.length) {
-			buttonType = 'submit';
-			buttonText = 'Submit';
-		} else {
-			buttonType = 'button';
-			buttonText = 'Next';
-		}
-
-		return {
-			currentStep: prevState.currentStep,
-			buttonType: buttonType,
-			buttonText: buttonText,
 		}
 	}
 	
@@ -76,14 +53,17 @@ class Form extends Component {
 			);
 		})
 
+		let button = <Button 
+						currentStep={this.state.currentStep} 
+						numOfSteps={this.props.formSteps.length}
+						clicked={this.buttonClickHandler}/>
+
 		return (
 			<div className="form-container">
 				{tabs}
 				<form action="#" method="POST">
 					{formSteps}
-					<button type={this.state.buttonType} onClick={this.buttonClickHandler}>
-						{this.state.buttonText}
-					</button>
+					{button}
 				</form>
 			</div>
 		)
