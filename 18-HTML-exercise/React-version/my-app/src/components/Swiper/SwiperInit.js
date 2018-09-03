@@ -1,7 +1,3 @@
-// [NOTE] I still needed to include the Swiper CDN  in my index.html file for this to work
-// perhaps it was an issue with the setup
-// come back to later and fix
-
 import Swiper from 'swiper';
 
 var swiperInit = function() {

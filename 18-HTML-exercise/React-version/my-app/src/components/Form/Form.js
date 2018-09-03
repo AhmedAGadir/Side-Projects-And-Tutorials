@@ -10,7 +10,6 @@ import './Form.css';
 // - add proptypes
 // - better use of lifecycle components
 // - css modules for styling
-// - 2 way binding for forms? is it neccessary?
 // - more -- read react docs
 
 class Form extends Component {

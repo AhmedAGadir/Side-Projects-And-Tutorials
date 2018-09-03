@@ -1,19 +1,31 @@
 import React from 'react';
 
-const field = props => {
-	let id = props.data.title.toLowerCase().replace(/\s/, '_');
-	let name = 'user_' + id;
+class Field extends React.Component {
 
-	return (
-		<div>
-			<label htmlFor={id}>{props.data.title}</label>
-			<input 
-				type={props.data.type} 
-				id={id} 
-				pattern={props.data.pattern ? props.data.patten : null} 
-				name={name}
-				required/> 
-		</div>
-	)
+	state = {value: ''}
+
+	changeHandler = e => {
+		this.setState({value: e.target.value})
+	}
+
+	render() {
+		let id = this.props.data.title.toLowerCase().replace(/\s/, '_');
+		let name = 'user_' + id;
+
+		return (
+			<div>
+				<label htmlFor={id}>{this.props.data.title}</label>
+				<input 
+					value={this.state.value}
+					onChange={this.changeHandler}
+					type={this.props.data.type} 
+					id={id} 
+					pattern={this.props.data.pattern ? this.props.data.patten : null} 
+					name={name}
+					required/> 
+			</div>
+		)
+	}
 }
-export default field;
+
+export default Field;
