@@ -1,5 +1,6 @@
 import React from 'react';
 
+// make this a purecomponent so that it doesnt rerender when nothings changed
 const button = props => {
 
 	let lastTab = props.currentStep == props.numOfSteps;

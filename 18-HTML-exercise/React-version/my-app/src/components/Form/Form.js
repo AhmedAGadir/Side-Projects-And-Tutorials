@@ -7,7 +7,7 @@ import './Form.css';
 
 // To do:
 // - make sections actually dismount or fade out using lifecycle components
-// - add proptypes
+// - add proptypes for form fields
 // - better use of lifecycle components
 // - css modules for styling
 // - more -- read react docs

@@ -3,7 +3,8 @@ import Swiper from './components/Swiper/Swiper';
 import Puzzle from './components/Puzzle/Puzzle';
 import Form from './components/Form/Form';
 
-
+// change this to be a stateless component
+// perhaps use a layout component
 class App extends Component {
 
 	static defaultProps = {
