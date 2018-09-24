@@ -1,0 +1,30 @@
+.button {
+	border: none;
+	font-family: inherit;
+	border: none;
+
+	background: linear-gradient(to bottom, #32C954, 80%, #28A745);
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px 20px;
+	margin: 5px;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	border: 1px solid #eee;
+}
+
+.button:hover {
+	cursor: pointer;
+	border: 1px solid #eee;
+}
+
+.button:active {
+	background: linear-gradient(to top, #32C954, 80%, #28A745);
+
+}
+
+.button:disabled {
+	background: linear-gradient(to bottom, #84E199, 80%, #67DA81);
+	color: #eee;
+}
