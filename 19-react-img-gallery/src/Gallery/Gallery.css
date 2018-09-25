@@ -1,5 +1,5 @@
 .gallery {
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 	box-shadow: 0 2px 3px #ccc;
 }
@@ -22,33 +22,30 @@
 	height: 350px;
 }
 
-.active div {
+.active .thumbnail {
 	height: 100%;
 }
 
-.active div img {
+.active .thumbnail img {
 	height: 100%;
 }
 
-.thumbnails {
+/*.thumbnails-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-.thumbnails > div:hover {
+.thumbnails-wrapper .thumbnail {
+	border-radius: 5px;
+}
+
+.thumbnails-wrapper > .thumbnail:hover {
 	cursor: pointer;
 }
 
-.thumbnails img {
+.thumbnails-wrapper .thumbnail img {
 	height: 150px;
-}
-
-/*@media (max-width: 700px) {
-	.thumbnails div {
-		width: 100%;
-		text-align: center;
-	}
 }*/
 
 .button-wrap {
@@ -56,3 +53,76 @@
 	display: flex;
 	justify-content: center;
 }
+
+/* ===================================== */
+
+.card-columns .card {
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+  }
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+  border-radius: 0.25rem;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: calc(0.25rem - 1px);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* ============= */
+
+.gallery {
+	position: fixed;
+    top: 5vh;
+    right: 0;
+    width: 70vw;
+    height: 100%;
+}
+
+.card-columns {
+	background: green;
+	padding: 1rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 30vw;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100vh;
+	-webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+}
+
+.card-columns .card {
+	width: 100%;
+}
+

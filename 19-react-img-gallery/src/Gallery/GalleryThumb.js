@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GalleryThumb.css';
 
 class GalleryThumb extends Component {
 	state = {
@@ -16,14 +17,18 @@ class GalleryThumb extends Component {
       		return <div><h3>Loading image....</h3></div>
     	}
     	return (
-    		<div onClick={this.props.clicked}>
-        		<img 
-					src={this.props.url} 
-					alt={this.props.title}
-					onError={function() {
-						this.onError=null;
-						this.src='https://worldbookofrecords.uk/assets/img/404.jpg';}
-					}/>
+    		<div className="card">
+    			<div className='close' onClick={this.props.remove}>&times;</div>
+        	<img
+        		className="card-img"
+        		onClick={this.props.clicked} 
+						src={this.props.url} 
+						alt={this.props.title}
+						// onError={function() {
+						//	this.onError=null;
+						//	this.src='https://worldbookofrecords.uk/assets/img/404.jpg';}
+						//}
+						/>
 			</div>
     	)	
   	}

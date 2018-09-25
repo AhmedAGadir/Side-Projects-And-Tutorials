@@ -25,7 +25,7 @@ class Gallery extends Component {
   state = {
     thumb_data: null,
     active_thumb_ind: 0,
-  };
+  }
 
   componentDidMount() {
     fetch("https://api.giphy.com/v1/gifs/trending?api_key=PEyIrGaWdf08Lw4nezyXejpD9Y0pO6Rt")
@@ -33,34 +33,65 @@ class Gallery extends Component {
       .then(data => {
         console.log('response data is:', data);
         const thumb_data = data.data.map(d => {
-        	return {
-        		title: d.title,
-        		id: d.id,
-        		preview_url: d.images.downsized_medium.url,
+          return {
+            title: d.title,
+            id: d.id,
+            preview_url: d.images.downsized_medium.url,
             active_url: d.images.downsized_large.url
-        	}
+          }
         });
 
         this.setState({thumb_data});
         console.log('thumb_data is:', thumb_data)
-	  })
+      })
+      .then(_ => {
+        // this.timer = setInterval(() => this.changeThumb(), 3000);
+      })
       .catch(err => console.log(err));
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
+
+  changeThumb = () => {
+    console.log(this.state.active_thumb_ind)
+    this.setState(prevState => {
+      if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
+        return {active_thumb_ind: 0}
+      }
+      else return {active_thumb_ind: prevState.active_thumb_ind + 1}
+    })
+  }
+
+  resetTimer = () => {
+    // clearInterval(this.timer);
+    // this.timer = setInterval(() => this.changeThumb(), 3000);
+  }
+
   prevThumbHandler = () => {
+    this.resetTimer();
     this.setState(prevState => {
       return {active_thumb_ind: prevState.active_thumb_ind - 1};
     })
   }
 
   nextThumbHandler = () => {
+    this.resetTimer();
     this.setState(prevState => {
       return {active_thumb_ind: prevState.active_thumb_ind + 1};
     })
   }
 
   selectThumbnailHandler = ind => {
+    this.resetTimer();
   	this.setState({active_thumb_ind: ind});
+  }
+
+  removeThumbHandler = ind => {
+    let thumbArr = [...this.state.thumb_data];
+    thumbArr.splice(ind, 1)
+    this.setState({thumb_data: thumbArr});
   }
 
   render() {
@@ -71,34 +102,44 @@ class Gallery extends Component {
     const activeThumbData = this.state.thumb_data[this.state.active_thumb_ind];
 
     const thumbTitle = activeThumbData.title;
-    const activeThumb = <GalleryThumb url={activeThumbData.active_url} title={activeThumbData.title}/>
+    const activeThumb = (
+      <GalleryThumb 
+        url={activeThumbData.active_url} 
+        title={activeThumbData.title}
+        // remove={() => this.removeThumbHandler(ind)}
+        />
+    );
   	const inactiveThumbs = this.state.thumb_data.map((data, ind) => (
   		<GalleryThumb 
   			key={data.id}
         title={activeThumb.title}
   			url={data.preview_url}
-  			clicked={() => this.selectThumbnailHandler(ind)} />
+  			clicked={() => this.selectThumbnailHandler(ind)}
+        remove={() => this.removeThumbHandler(ind)} />
     ));
 
  	return (
-      <div>
-        <div className="gallery"> 
+      <div className="gallery">
+        
         <h1>{thumbTitle}</h1>
-        	<div className="active">
-        		{activeThumb}
-        	</div>
-        	<div className="button-wrap">
-        		<Button 
-              disabled={this.state.active_thumb_ind === 0 ? true : false}
-              clicked={this.prevThumbHandler}>Prev</Button>
-        		<Button 
-              disabled={this.state.active_thumb_ind === this.state.thumb_data.length - 1 ? true : false}
-              clicked={this.nextThumbHandler}>Next</Button>
-        	</div>
-        	<div className="thumbnails">
-        		{inactiveThumbs}
-        	</div>
-        </div>
+      	
+        <div className="active">
+      		{activeThumb}
+      	</div>
+      	
+        <div className="button-wrap">
+      		<Button 
+            disabled={this.state.active_thumb_ind === 0 ? true : false}
+            clicked={this.prevThumbHandler}>Prev</Button>
+      		<Button 
+            disabled={this.state.active_thumb_ind === this.state.thumb_data.length - 1 ? true : false}
+            clicked={this.nextThumbHandler}>Next</Button>
+      	</div>
+      	
+        <div className="card-columns">
+      		{inactiveThumbs}
+      	</div>
+
       </div>
     );
   }
