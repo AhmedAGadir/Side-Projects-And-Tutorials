@@ -11,4 +11,6 @@ body {
 	line-height: 1.5;
 	background-color: #121212;
 	color: #fff;
+	line-height: 1.5;
+	min-height: 100vh;
 }
