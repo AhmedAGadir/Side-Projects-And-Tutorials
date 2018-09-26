@@ -1,1 +1,86 @@
-Active.css
+.activeThumbCard {
+	/*background: green;*/
+	padding: 20px;
+}
+
+.thumbWrap {
+	/*background: purple;*/
+	display: flex;
+}
+
+.thumbInteract {
+	padding: 0 30px;
+	/*background: orange;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.thumbInteract .options {
+	/*background: pink;*/
+}
+
+.thumbInteract .options ul {
+	list-style-type: none;
+}
+
+.thumbInteract .options ul li {
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.thumbInteract .options ul li:hover {
+	cursor: pointer;
+}
+
+.thumbInteract .options ul li:nth-of-type(1):hover {
+	color: magenta;
+}
+
+.thumbInteract .options ul li:nth-of-type(2):hover {
+	color: orange;
+}
+
+.thumbInteract .options ul li:nth-of-type(3):hover {
+	color: cyan;
+}
+
+.thumbInteract .options ul li:nth-of-type(4):hover {
+	color: springgreen;
+}
+
+.thumbInteract .options ul li svg {
+	margin-right: 10px;
+	animation-duration: 1s;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.thumbInteract .socialMediaWrap {
+	/*background-color: lightblue;*/
+	text-align: center;
+}
+
+.thumbInteract .socialMediaWrap h4 {
+	text-transform: uppercase;
+	padding: 10px 0;
+}
+
+.thumbInteract .socialMediaWrap .socialMediaIcons div {
+	display: inline-block;
+	font-size: 20px;
+	margin: 0 10px;
+
+
+}

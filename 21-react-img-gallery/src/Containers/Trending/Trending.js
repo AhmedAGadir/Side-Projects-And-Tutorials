@@ -35,7 +35,6 @@ class Trending extends Component {
 	        id: d.id,
 	        preview_url: d.images.downsized_medium.url,
 	        active_url: d.images.downsized_large.url,
-	        trending_datetime: d.trending_datetime
 	      }
 	    });
 
