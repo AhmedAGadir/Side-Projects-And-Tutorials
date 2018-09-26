@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Layout from './Components/Layout/Layout';
 import { BrowserRouter } from 'react-router-dom';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStroopwafel, faheart } from '@fortawesome/free-solid-svg-icons'
-library.add(faStroopwafel, faheart)
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStroopwafel, faHeart, faLink, faDownload, faCode} from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons'
+library.add(faStroopwafel, faHeart, faLink, faDownload, faCode, faFacebookF, faTwitter, faInstagram)
 
 
 class App extends Component {
