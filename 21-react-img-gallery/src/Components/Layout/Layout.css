@@ -38,6 +38,8 @@ header nav a.active {
 
 main {
 	padding: 40px 20px;
+	min-height: 80vh;
+    position: relative;
 }
 
 footer {
@@ -45,9 +47,9 @@ footer {
 	padding: 50px 20px;
 	display: flex;
 	justify-content: flex-end;
-	position: absolute;
+/*	position: absolute;
     width: 100%;
-    bottom: 0;
+    bottom: 0;*/
 }
 
 footer a {
