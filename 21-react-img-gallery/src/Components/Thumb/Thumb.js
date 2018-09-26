@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import errorImg from '../../assets/error.jpeg'
+import './Thumb.css'
 
 class Thumb extends Component {
 	state = {
@@ -19,7 +20,7 @@ class Thumb extends Component {
 		}
 
 		return (
-			<div>
+			<div className="thumb">
 				{img}
 			</div>
 		)

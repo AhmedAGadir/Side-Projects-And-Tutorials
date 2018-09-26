@@ -47,30 +47,6 @@ class Trending extends Component {
 	  .catch(err => console.log(err));
 	}
 
-	componentWillUnmount() {
-		clearInterval(this.timer)
-	}
-
-	changeThumb = () => {
-    console.log(this.state.active_thumb_ind)
-    this.setState(prevState => {
-      if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
-        return {active_thumb_ind: 0}
-      }
-      else return {active_thumb_ind: prevState.active_thumb_ind + 1}
-    })
-  }
-
-  resetTimer = () => {
-    // clearInterval(this.timer);
-    // this.timer = setInterval(() => this.changeThumb(), 3000);
-  }
-
-  selectThumbnailHandler = ind => {
-    this.resetTimer();
-  	this.setState({active_thumb_ind: ind});
-  }
-
 	render() {
 		if (!this.state.thumb_data) {
 			return <Loader style={{

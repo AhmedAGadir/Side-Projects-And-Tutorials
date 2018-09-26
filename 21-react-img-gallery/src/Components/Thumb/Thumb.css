@@ -1,1 +1,14 @@
-Thumb.css
+.thumb {
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	.thumb {
+		flex-shrink: 0;
+	}
+}
+
+.thumb img {
+	max-width: 700px;
+	width: 100%
+}

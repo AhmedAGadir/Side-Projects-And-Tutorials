@@ -1,10 +1,18 @@
 .activeThumbCard {
 	/*background: green;*/
 	padding: 20px;
+	max-width: 720px;
+    margin: auto;
 }
 
 .activeThumbCard h1 {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+	.activeThumbCard h1 {
+		text-align: center;
+	}
 }
 
 .thumbWrap {
@@ -12,9 +20,16 @@
 	display: flex;
 }
 
+@media (max-width: 768px) {
+	.thumbWrap {
+		flex-wrap: wrap;
+	}
+}
+
 .thumbInteract {
 	padding: 0 30px;
 	/*background: orange;*/
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -30,12 +45,21 @@
 
 .thumbInteract .options ul li {
 	margin-bottom: 10px;
+	padding-right: 10px;
 	font-size: 18px;
 	font-weight: bold;
 }
 
 .thumbInteract .options ul li:hover {
 	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.thumbInteract .options ul {
+		display: flex;
+		justify-content: center;
+		padding-top: 10px;
+	}
 }
 
 .thumbInteract .options ul li:nth-of-type(1):hover {
@@ -85,6 +109,63 @@
 	display: inline-block;
 	font-size: 20px;
 	margin: 0 10px;
+}
 
 
+.copied {
+	background-color: orange;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	height: 40px;
+	position: fixed;
+	z-index: 100;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	animation-name: drop-down;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+}
+
+.copied:hover {
+	background: #B37400;
+	cursor: pointer;
+	color: #eee;
+}
+
+@keyframes drop-down {
+	0% {
+		top: 50%;
+	}
+	100% {
+		top: calc(100vh - 40px);
+	}
+}
+
+.copied span {
+	font-size: 20px;
+	position: absolute;
+	right: 10px;
+	padding-right: 10px;
+}
+
+
+.embedded h3 {
+	color: springgreen;
+}
+
+.embedded p {
+	margin: 10px 0 20px;
+}
+
+.embedded input {
+	border: none;
+	outline: none;
+	box-shadow: none;
+	width: 100%;
+	height: 25px;
+	padding: 5px;
 }

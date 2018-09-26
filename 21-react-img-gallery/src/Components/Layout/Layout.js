@@ -27,7 +27,7 @@ class Layout extends Component {
 				</header>
 				<main>
 					<Route path="/" exact component={Trending} />
-					<Route path="/search" render={() => <h1>Search for GIFs</h1>} />
+					<Route path="/search" render={() => <h1>(Under Construction ...)</h1>} />
 				</main>
 				<footer>
 					<p>Coded by <a href="https://ahmedagadir.com" target="_blank" rel="noopener noreferrer">Ahmed Abdel Gadir</a> with <span title="what is this?"><FontAwesomeIcon icon="stroopwafel" /></span></p>
