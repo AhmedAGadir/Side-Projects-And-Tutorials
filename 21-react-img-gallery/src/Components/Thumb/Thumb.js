@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import errorImg from '../../assets/error.jpeg'
 
-const thumb = props => {
+class Thumb extends Component {
+	state = {
+		error: false,
+	}
 
-	return (
-		<div>
-			<img src={props.url} alt={props.title} />
-		</div>
-	)
+	handleError = e => {
+		console.log('image broken')
+		this.setState({error: true})
+	}
+
+	render() {
+		let img = <img src={this.props.url} alt={this.props.title} onError={this.handleError}/>;
+
+		if (this.state.error) {
+			img = <img src={errorImg} alt="error"/>;
+		}
+
+		return (
+			<div>
+				{img}
+			</div>
+		)
+	}
 }
 
-export default thumb;
+export default Thumb;

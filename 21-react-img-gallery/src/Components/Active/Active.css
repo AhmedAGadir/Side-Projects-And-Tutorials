@@ -3,6 +3,10 @@
 	padding: 20px;
 }
 
+.activeThumbCard h1 {
+	margin-bottom: 10px;
+}
+
 .thumbWrap {
 	/*background: purple;*/
 	display: flex;

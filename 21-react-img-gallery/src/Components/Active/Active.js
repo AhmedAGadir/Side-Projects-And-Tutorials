@@ -27,11 +27,23 @@ const active = props => {
 		console.log('play copied animation')
 	}
 
+	const downloadGif = () => {
+		// need to fix this - not working as expected
+		const a = document.createElement('a');
+		a.setAttribute('href', props.activeThumbData.active_url);
+		a.setAttribute('download', true);
+		a.setAttribute('target', '_blank')
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		console.log('[NOT WORKING] downloaded')
+	}
+
 	return (
 		<div className="activeThumbCard">
 			<h1>{props.activeThumbData.title}</h1>
 			<div className="thumbWrap">
-				<Thumb url={props.activeThumbData.active_url} title={props.activeThumbData.title} />
+				<Thumb url={'props.activeThumbData.active_url'} title={props.activeThumbData.title} />
 				<div className="thumbInteract">
 					<div className="options">
 						<ul>
@@ -44,6 +56,7 @@ const active = props => {
 								onMouseOver={e => addPulseAnimation(e)}
 								onMouseOut={e => removeAnimationName(e)}><FontAwesomeIcon icon="link" />Copy link</li>
 							<li 
+								onClick={() => downloadGif()}
 								onMouseOver={e => addPulseAnimation(e)}
 								onMouseOut={e => removeAnimationName(e)}><FontAwesomeIcon icon="download" />Download</li>
 							<li 
