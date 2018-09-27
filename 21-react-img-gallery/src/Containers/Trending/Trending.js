@@ -47,6 +47,38 @@ class Trending extends Component {
 	  .catch(err => console.log(err));
 	}
 
+	componentWillUnmount() {
+		// clearInterval(this.timer)
+	}
+
+	changeThumb = () => {
+	    // this.setState(prevState => {
+	    // 	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
+	    //     	return {active_thumb_ind: 0}
+	    //   	}
+	    //   	else return {active_thumb_ind: prevState.active_thumb_ind + 1}
+	    // })
+	}
+
+	resetTimer = () => {
+    // clearInterval(this.timer);
+    // this.timer = setInterval(() => this.changeThumb(), 3000);
+  }
+
+ 	prevThumbHandler = () => {
+    	// this.resetTimer();
+    	this.setState(prevState => {
+      		return {active_thumb_ind: prevState.active_thumb_ind - 1};
+    	})
+  	}
+
+  	nextThumbHandler = () => {
+    	// this.resetTimer();
+    	this.setState(prevState => {
+    	  	return {active_thumb_ind: prevState.active_thumb_ind + 1};
+    	})
+  	}
+
 	render() {
 		if (!this.state.thumb_data) {
 			return <Loader style={{
@@ -61,7 +93,12 @@ class Trending extends Component {
 
 		return (
 			<div>
-				<Active activeThumbData={activeThumbData}/>
+				<Active 
+					activeThumbData={activeThumbData}
+					firstGif={this.state.active_thumb_ind === 0}
+					lastGif={this.state.active_thumb_ind === this.state.thumb_data.length - 1}
+					prev={this.prevThumbHandler}
+					next={this.nextThumbHandler}/>
 			</div>
 		)
 	}

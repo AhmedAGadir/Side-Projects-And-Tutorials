@@ -1,5 +1,6 @@
 .thumb {
 	margin: 0 auto;
+	align-self: center;
 }
 
 @media (min-width: 768px) {

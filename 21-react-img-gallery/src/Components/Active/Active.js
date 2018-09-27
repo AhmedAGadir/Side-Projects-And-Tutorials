@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Thumb from '../Thumb/Thumb';
-import Modal from '../UI/Modal/Modal'
+import Modal from '../UI/Modal/Modal';
+import Button from '../UI/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Active.css';
 
@@ -64,43 +65,54 @@ class Active extends Component {
 
 		return (
 			<Fragment>
-				<div className="activeThumbCard">
-					<h1>{this.props.activeThumbData.title}</h1>
-					<div className="thumbWrap">
-						<Thumb url={this.props.activeThumbData.active_url} title={this.props.activeThumbData.title} />
-						<div className="thumbInteract">
-							<div className="options">
-								<ul>
-									<li 
-										onClick={() => console.log('some database stuff done here')}
-										onMouseOver={this.addPulseAnimationHandler}
-										onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="heart" />Favourite</li>
-									<li 
-										onClick={this.copyLinkHandler}
-										onMouseOver={this.addPulseAnimationHandler}
-										onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="link" />Copy link</li>
-									<li 
-										onClick={this.downloadGifHandler}
-										onMouseOver={this.addPulseAnimationHandler}
-										onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="download" />Download</li>
-									<li 
-										onClick={() => this.setState({embedded: true})}
-										onMouseOver={this.addPulseAnimationHandler}
-										onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="code" />Embed</li>
-								</ul>
-							</div>
-							<div className="socialMediaWrap">
-								<h4>share it!</h4>
-								<div className="socialMediaIcons"> 
-									<div><FontAwesomeIcon icon={["fab", "facebook-f"]} /></div>
-									<div><FontAwesomeIcon icon={["fab", "twitter"]} /></div>
-									<div><FontAwesomeIcon icon={["fab", "instagram"]} /></div>
+				<div className="activeWrap">
+					<div className="activeThumbCard">
+						<h1>{this.props.activeThumbData.title}</h1>
+						<div className="thumbWrap">
+							<Thumb url={this.props.activeThumbData.active_url} title={this.props.activeThumbData.title} />
+							<div className="thumbInteract">
+								<div className="controls">
+									<Button 
+							            disabled={this.props.firstGif ? true : false}
+							            clicked={this.props.prev}><FontAwesomeIcon icon="chevron-left" /></Button>
+							      	<Button 
+							            disabled={this.props.lastGif ? true : false}
+							            clicked={this.props.next}><FontAwesomeIcon icon="chevron-right" /></Button>
+								</div>
+								<div className="options">
+									<ul>
+										<li 
+											onClick={() => console.log('some database stuff done here')}
+											onMouseOver={this.addPulseAnimationHandler}
+											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="heart" />Favourite</li>
+										<li 
+											onClick={this.copyLinkHandler}
+											onMouseOver={this.addPulseAnimationHandler}
+											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="link" />Copy link</li>
+										<li 
+											onClick={this.downloadGifHandler}
+											onMouseOver={this.addPulseAnimationHandler}
+											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="download" />Download</li>
+										<li 
+											onClick={() => this.setState({embedded: true})}
+											onMouseOver={this.addPulseAnimationHandler}
+											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="code" />Embed</li>
+									</ul>
+								</div>
+								<div className="socialMediaWrap">
+									<div className="wrap">
+										<h4>share it!</h4>
+										<div className="socialMediaIcons"> 
+											<div><FontAwesomeIcon icon={["fab", "facebook-f"]} /></div>
+											<div><FontAwesomeIcon icon={["fab", "twitter"]} /></div>
+											<div><FontAwesomeIcon icon={["fab", "instagram"]} /></div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
 				{this.state.copied ? (
 					<div className="copied" onClick={() => this.setState({copied: false})}><span>&times;</span>Copied!</div>
 				) : null}

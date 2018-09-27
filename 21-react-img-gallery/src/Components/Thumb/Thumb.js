@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import errorImg from '../../assets/error.jpeg'
+import errorImg from '../../assets/error-square.jpg'
 import './Thumb.css'
 
 class Thumb extends Component {
