@@ -63,9 +63,17 @@ class Trending extends Component {
 	}
 
 	resetTimer = () => {
-    // clearInterval(this.timer);
-    // this.timer = setInterval(() => this.changeThumb(), 3000);
-  }
+	  // clearInterval(this.timer);
+	  // this.timer = setInterval(() => this.changeThumb(), 3000);
+	}
+
+	deleteThumbHandler = () => {
+		if (window.confirm('Are you sure you want to delete this GIF?')) {
+			let thumbArr = [...this.state.thumb_data];
+	  		thumbArr.splice(this.state.active_thumb_ind, 1)
+	  		this.setState({thumb_data: thumbArr});
+		}
+	}
 
  	prevThumbHandler = () => {
     	// this.resetTimer();
@@ -100,7 +108,8 @@ class Trending extends Component {
 					firstGif={this.state.active_thumb_ind === 0}
 					lastGif={this.state.active_thumb_ind === this.state.thumb_data.length - 1}
 					prev={this.prevThumbHandler}
-					next={this.nextThumbHandler}/>
+					next={this.nextThumbHandler}
+					deleteThumb={this.deleteThumbHandler}/>
 			</div>
 		)
 	}

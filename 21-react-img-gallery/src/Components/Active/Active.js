@@ -20,7 +20,7 @@ class Active extends Component {
 
 	componentWillMount() {
 		this.setState({
-			embedURL: `<iframe src="lorem ipsum dolor" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href=${this.props.thumbData.embed_url}>via GIPHY</a></p>`
+			embedURL: `<iframe src="*****" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href=${this.props.thumbData.embed_url}>via GIPHY</a></p>`
 		})
 	}
 
@@ -29,27 +29,15 @@ class Active extends Component {
 			this.setState({
 				favourited: false,
 				copied: false,
-				embedded: false,
 			})
-		}
-	}
-
-	addPulseAnimationHandler = e => {
-		if (e.target.nodeName === 'LI') {
-			e.target.firstElementChild.style.animationName = 'pulse';
-		}
-	}
-
-	removePulseAnimationHandler = e => {
-		if (e.target.nodeName === 'LI') {
-			e.target.firstElementChild.style.animationName = '';
 		}
 	}
 
 	favouriteHandler = () => {
 		this.setState(prevState => {
-			return {favourited: !prevState.favourited,}
+			return {favourited: !prevState.favourited}
 		})
+		console.log('active thumb favourited [could do some database stuff with this information]')
 	}
 
 	copyLinkHandler = () => {
@@ -63,18 +51,6 @@ class Active extends Component {
 		document.body.removeChild(el);
 
 		this.setState({copied: true})
-	}
-
-	downloadGifHandler = () => {
-		// need to fix this - not working as expected
-		const a = document.createElement('a');
-		a.setAttribute('href', this.props.thumbData.original_url);
-		a.setAttribute('download', 'true');
-		a.setAttribute('target', '_blank')
-		document.body.appendChild(a);
-		a.click();
-		document.body.removeChild(a);
-		console.log('[NOT WORKING] downloaded')
 	}
 
 	changeEmbedURL = e => {
@@ -93,7 +69,10 @@ class Active extends Component {
 		const twitterIcon = <div><FontAwesomeIcon icon={["fab", "twitter"]} /></div>
 		const pinterestIcon = <div><FontAwesomeIcon icon={["fab", "pinterest"]} /></div>
 
-		let favouriteStyle = { color: (this.state.favourited) ? 'magenta' : 'inherit' };
+		const heartAnimation = ['animatedHeart']
+		if (this.state.favourited) {
+			heartAnimation.push('animate')
+		} 
 
 		return (
 			<Fragment>
@@ -113,23 +92,15 @@ class Active extends Component {
 								</div>
 								<div className="options">
 									<ul>
-										<li 
-											style={favouriteStyle}
-											onClick={this.favouriteHandler}
-											onMouseOver={this.addPulseAnimationHandler}
-											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="heart" />Favourite</li>
-										<li 
-											onClick={this.copyLinkHandler}
-											onMouseOver={this.addPulseAnimationHandler}
-											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="link" />Copy link</li>
-										<li 
-											onClick={this.downloadGifHandler}
-											onMouseOver={this.addPulseAnimationHandler}
-											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="download" />Download</li>
-										<li 
-											onClick={() => this.setState({embedded: true})}
-											onMouseOver={this.addPulseAnimationHandler}
-											onMouseOut={this.removePulseAnimationHandler}><FontAwesomeIcon icon="code" />Embed</li>
+										<li onClick={this.favouriteHandler}
+											className={this.state.favourited ? 'favourited' : null}>
+												<span className={heartAnimation.join(' ')}><FontAwesomeIcon icon="heart" /></span>Favourite</li>
+										<li onClick={this.copyLinkHandler}>
+											<FontAwesomeIcon icon="link" />Copy link</li>
+										<li onClick={() => this.setState({embedded: true})}>
+											<FontAwesomeIcon icon="code" />Embed</li>
+										<li onClick={this.props.deleteThumb}>
+											<FontAwesomeIcon icon="trash-alt" />Delete</li>
 									</ul>
 								</div>
 								<div className="socialMediaWrap">

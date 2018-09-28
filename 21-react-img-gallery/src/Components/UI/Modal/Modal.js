@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import './Modal.css'
 
 class Modal extends Component {
+	state = {
+		hide: true
+	}
 
-	// componentDidMount() {
-	// 	window.addEventListener('mousedown', this.props.closeModal)
-	// }
+	shouldComponentUpdate(nextProps) {
+		if (!nextProps.show && this.state.hide) {
+			return false
+		} else return true
+	}
 
-	// componentWillUnmount() {
-	// 	window.removeEventListener('mousedown', this.props.closeModal)
-	// }
-
-	// shouldComponentUpdate(nextProps) {
-	// 	if (nextProps.show == true && this.props.show == true) return false
-	// 	else return true 
-	// }
+	componentWillUpdate() {
+		if (this.state.hide) {
+			this.setState({hide: false})
+		}
+	}
 
 	render() {
 
@@ -32,6 +34,7 @@ class Modal extends Component {
 				ref={this.props.mRef}
 				className={classes.join(' ')}
 				style={{
+					display: this.state.hide ? 'none' : 'unset',
 					animationName: this.props.show ? 'blip-in' : 'blip-out',
 				}}>
 				<div className="wrap">

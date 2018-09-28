@@ -84,25 +84,36 @@
 	}
 }
 
+.thumbInteract .options ul li:nth-of-type(1).favourited {
+	color: magenta;
+}
+
 .thumbInteract .options ul li:nth-of-type(1):hover {
-	color: magenta !important;
+	color: magenta;
 }
 
 .thumbInteract .options ul li:nth-of-type(2):hover {
-	color: orange;
-}
-
-.thumbInteract .options ul li:nth-of-type(3):hover {
 	color: cyan;
 }
 
-.thumbInteract .options ul li:nth-of-type(4):hover {
+.thumbInteract .options ul li:nth-of-type(3):hover {
 	color: springgreen;
 }
 
+.thumbInteract .options ul li:nth-of-type(4):hover {
+	color: orange;
+}
+
 .thumbInteract .options ul li svg {
-	margin-right: 10px;
 	animation-duration: 1s;
+}
+
+.thumbInteract .options ul li:not(:nth-of-type(1)) svg {
+	margin-right: 10px;
+}
+
+.thumbInteract .options ul li:hover svg {
+	animation-name: pulse;
 }
 
 @keyframes pulse {
@@ -155,8 +166,102 @@
 	background: rgba(0,0,0,0.5);
 }
 
+.animatedHeart {
+	position: relative;
+	z-index: 1;
+	margin-right: 5px;
+	padding: 5px;
+}
+
+.animatedHeart::before {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	height: 50%;
+	width: 50%;
+	top: 0%;
+	bottom: 5px;
+	left: -100%;
+	right: -100%;
+	margin: auto;
+	/*border: 1px solid;*/
+	background-repeat: no-repeat;
+	z-index: -2;
+	background-image: 
+	radial-gradient(circle, transparent 10%, pink 25%, yellow 20%, transparent 40%, transparent 40%),
+	radial-gradient(circle, transparent 10%, pink 25%, yellow 20%, transparent 40%, transparent 40%),
+	radial-gradient(circle, transparent 10%, pink 25%, yellow 20%, transparent 40%, transparent 40%),
+	radial-gradient(circle, transparent 10%, pink 25%, yellow 20%, transparent 40%, transparent 40%),
+	radial-gradient(circle, transparent 10%, pink 25%, yellow 20%, transparent 40%, transparent 40%);
+	background-size: 
+	0% 0%,
+	0% 0%,
+	0% 0%,
+	0% 0%,
+	0% 0%;
+	background-position:  
+	50% 50%,
+	50% 50%,
+	50% 50%,
+	50% 50%,
+	50% 50%;
+}
+
+.animatedHeart::before:hover {
+	cursor: pointer;
+}
+
+.animatedHeart.animate::before {
+	height: 0;
+	width: 0;
+	animation: heartAnimation 1.5s ease forwards;
+}
+
+@keyframes heartAnimation {
+	0%, 100% {
+		height: 0;
+		width: 0;
+		background-position:
+		50% 50%,
+		50% 50%,
+		50% 50%,
+		50% 50%,
+		50% 50%;
+		background-size: 
+		0% 0%,
+		0% 0%,
+		0% 0%,
+		0% 0%,
+		0% 0%;
+	}
+	20%,41%,89% {
+		height: 200%;
+		width: 200%;
+		background-size:
+		20% 20%,
+		20% 20%,
+		20% 20%,
+		20% 20%,
+		20% 20%,
+	}
+	40% {
+		background-size:
+		10% 10%,
+		10% 10%,
+		10% 10%,
+		10% 10%,
+		10% 10%;
+		background-position:
+		50% 0%,
+		0% 35%,
+		100% 35%,
+		15% 100%,
+		85% 100%;
+	}
+}
+
 .copied {
-	background-color: orange;
+	background-color: cyan;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -174,7 +279,7 @@
 }
 
 .copied:hover {
-	background: #B37400;
+	background: darkcyan;
 	cursor: pointer;
 	color: #eee;
 }
