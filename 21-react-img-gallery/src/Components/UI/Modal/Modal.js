@@ -3,29 +3,41 @@ import './Modal.css'
 
 class Modal extends Component {
 
-	componentDidMount() {
-		// setTimeout(() => window.addEventListener('click', this.props.closeModal), 500)
-		window.addEventListener('mousedown', this.props.closeModal)
-	}
+	// componentDidMount() {
+	// 	window.addEventListener('mousedown', this.props.closeModal)
+	// }
 
-	componentWillUnmount() {
-		window.removeEventListener('mousedown', this.props.closeModal)
-	}
+	// componentWillUnmount() {
+	// 	window.removeEventListener('mousedown', this.props.closeModal)
+	// }
+
+	// shouldComponentUpdate(nextProps) {
+	// 	if (nextProps.show == true && this.props.show == true) return false
+	// 	else return true 
+	// }
 
 	render() {
-		let classes = ['Modal'];
+
+		if (this.props.show) {
+			window.addEventListener('mousedown', this.props.closeModal)
+		} else {
+			window.removeEventListener('mousedown', this.props.closeModal)
+		}
+
+		let classes = ['modal'];
 		classes.push(this.props.className);
 
 		return (
 			<div 
-				// style={{
-				// 	transform: this.props.show ? ' translate(-50%, -50%) translateY(0)' : 'translate(-50%, -50%) translateY(-100vh)',
-				// 	opacity: this.props.show ? '1' : '0',
-				// }}
 				ref={this.props.mRef}
-				className={classes.join(' ')}>
-				<span onClick={this.props.closeModal}>&times;</span>
-				{this.props.children}
+				className={classes.join(' ')}
+				style={{
+					animationName: this.props.show ? 'blip-in' : 'blip-out',
+				}}>
+				<div className="wrap">
+					<span onClick={this.props.closeModal}>&times;</span> 
+					{this.props.children}
+				</div>
 			</div>
 		)
 	}

@@ -35,6 +35,8 @@ class Trending extends Component {
 	        id: d.id,
 	        preview_url: d.images.downsized_medium.url,
 	        active_url: d.images.downsized_large.url,
+	        original_url: d.images.original.url,
+	        embed_url: d.embed_url,
 	      }
 	    });
 
@@ -84,8 +86,8 @@ class Trending extends Component {
 			return <Loader style={{
 				position: 'absolute',
 				top: '50%',
-		    left: '50%',
-		    transform: 'translate(-50%,-50%) scale(1.8)',
+		   		left: '50%',
+		   		transform: 'translate(-50%,-50%) scale(1.8)',
 			}}/>
 		}
 
@@ -94,7 +96,7 @@ class Trending extends Component {
 		return (
 			<div>
 				<Active 
-					activeThumbData={activeThumbData}
+					thumbData={activeThumbData}
 					firstGif={this.state.active_thumb_ind === 0}
 					lastGif={this.state.active_thumb_ind === this.state.thumb_data.length - 1}
 					prev={this.prevThumbHandler}
