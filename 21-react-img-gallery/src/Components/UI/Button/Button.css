@@ -1,11 +1,14 @@
 .button {
 	border: none;
-	
-	padding: 8px 20px;
-	margin-right: 3px;
+	height: 45px;
+	width: 60px;
+	margin: 0 1px;
 	background: transparent;
 	color: white;
-	font-size: 23px;
+	font-size: 20px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button:hover:not(:disabled) {

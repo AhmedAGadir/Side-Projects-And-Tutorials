@@ -9,6 +9,7 @@
 	border-style: solid;
 	border-color: springgreen;
 
+	max-height: 5px;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
@@ -22,7 +23,7 @@
 @keyframes blip-in {
 	0% {
 		max-width: 0;
-		height: 2px;
+		height: 5px;
 		border-width: 0px;
 	}
 	50% {
@@ -46,7 +47,7 @@
 	}
 	100% {
 		max-width: 0;
-		height: 2px;
+		height: 5px;
 		border-width: 0px;		
 	}
 }

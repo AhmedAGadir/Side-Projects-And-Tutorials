@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Loader from '../../Components/UI/Loader/Loader';
-import Active from '../../Components/Active/Active';
+import Active from '../Active/Active';
+import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // GOAL: Create a React Gallery App with 1 large active image, and inactive thumb images below where you can change the active image
 // INSTRUCTIONS:
 // 0. Fork this repo to a new project
 // 1. Make a call to the giphy API and pull in a list of random images (API url: https://api.giphy.com/v1/gifs/trending?api_key=PEyIrGaWdf08Lw4nezyXejpD9Y0pO6Rt)
 // 1.1 You can read up on the api over here https://developers.giphy.com/docs/
 // 2. Set the active image in the state of the Gallery component
-// 3. Create a list of inactive images using the GalleryThumb Component
-// 4. Add an automatic timer that changes the active images after 3 seconds
-// 5. On click of each GalleryThumb, update the active image
-// 6. Add a remove button on the GalleryThumb that deletes images when clicked
+// 3. **** Create a list of inactive images using the GalleryThumb Component
+// 4. **** Add an automatic timer that changes the active images after 3 seconds
+// 5. **** On click of each GalleryThumb, update the active image
+// 6. **** Add a remove button on the GalleryThumb that deletes images when clicked
 // 7. Add a slick animation to transition between active images (that's more complex then just opacity)
 // 8. Add any extra styling & behaviour to make it look polished
 
@@ -33,10 +34,11 @@ class Trending extends Component {
 	      return {
 	      	title: d.title,
 	        id: d.id,
-	        preview_url: d.images.downsized_medium.url,
-	        active_url: d.images.downsized_large.url,
 	        original_url: d.images.original.url,
+	        active_url: d.images.downsized_large.url,
+	        preview_url: d.images.downsized_medium.url,
 	        embed_url: d.embed_url,
+	        still_url: d.images.original_still.url,
 	      }
 	    });
 
@@ -50,7 +52,7 @@ class Trending extends Component {
 	}
 
 	componentWillUnmount() {
-		// clearInterval(this.timer)
+		// clearInterval(this.timer);
 	}
 
 	changeThumb = () => {
@@ -65,6 +67,10 @@ class Trending extends Component {
 	resetTimer = () => {
 	  // clearInterval(this.timer);
 	  // this.timer = setInterval(() => this.changeThumb(), 3000);
+	}
+
+	selectThumbHandler = ind => {
+		this.setState({active_thumb_ind: ind});
 	}
 
 	deleteThumbHandler = () => {
@@ -110,6 +116,9 @@ class Trending extends Component {
 					prev={this.prevThumbHandler}
 					next={this.nextThumbHandler}
 					deleteThumb={this.deleteThumbHandler}/>
+				<MasonryGrid 
+					thumbData={this.state.thumb_data}
+					selectThumb={this.selectThumbHandler}/>
 			</div>
 		)
 	}

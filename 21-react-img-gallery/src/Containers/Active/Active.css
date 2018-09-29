@@ -1,6 +1,7 @@
 .activeWrap {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .activeThumbCard {
@@ -11,7 +12,7 @@
 
 .activeThumbCard h1 {
 	margin-bottom: 20px;
-	max-width: 550px;
+	/*max-width: 550px;*/
 }
 
 @media (max-width: 768px) {
@@ -24,6 +25,7 @@
 .thumbWrap {
 	/*background: purple;*/
 	display: flex;
+	justify-content: center;
 	align-items: space-between;
 }
 
@@ -36,18 +38,29 @@
 .thumbInteract {
 	padding: 0 30px;
 	/*background: orange;*/
-	width: 100%;
 	min-width: 200px;
 	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: space-around;
+	align-items: center;
 	text-align: center;
 }
 
+.thumbInteract .controls {
+	display: flex;
+	justify-content: center;
+}
+
 @media (max-width: 768px) {
+
+	.thumbInteract {
+		flex-direction: row;
+	}
+
 	.thumbInteract .controls {
-		margin: 10px auto 12px;	
 		order: 2;
+		flex: 1;
 	}
 }
 
@@ -67,7 +80,7 @@
 
 .thumbInteract .options ul li {
 	margin-bottom: 10px;
-	padding-right: 10px;
+	padding-right: 15px;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -141,10 +154,12 @@
 @media (max-width: 768px) {
 	.thumbInteract .socialMediaWrap {
 		justify-content: center;
+		align-items: center;
+		flex: 1;
 		order: 3;
 	}
 	.thumbInteract .socialMediaWrap h4 {
-		padding-bottom: 5px;
+		display: none;
 	}
 }
 
@@ -159,6 +174,7 @@
 	font-size: 20px;
 	width: 45px;
 	height: 45px;
+	margin: 0 1px;
 }
 
 .thumbInteract .socialMediaWrap .socialMediaIcons div:hover {
@@ -235,8 +251,8 @@
 		0% 0%;
 	}
 	20%,41%,89% {
-		height: 200%;
-		width: 200%;
+		height: 150%;
+		width: 150%;
 		background-size:
 		20% 20%,
 		20% 20%,

@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FacebookShareButton, TwitterShareButton, PinterestShareButton } from 'react-share';
-import Thumb from '../Thumb/Thumb';
-import Modal from '../UI/Modal/Modal';
-import Button from '../UI/Button/Button';
+import Thumb from '../../Components/Thumb/Thumb';
+import Modal from '../../Components/UI/Modal/Modal';
+import Button from '../../Components/UI/Button/Button';
 import './Active.css';
 
 class Active extends Component {
@@ -29,6 +29,7 @@ class Active extends Component {
 			this.setState({
 				favourited: false,
 				copied: false,
+				embedURL: `<iframe src="*****" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href=${nextProps.thumbData.embed_url}>via GIPHY</a></p>`
 			})
 		}
 	}
@@ -80,7 +81,10 @@ class Active extends Component {
 					<div className="activeThumbCard">
 						<h1>{this.props.thumbData.title}</h1>
 						<div className="thumbWrap">
-							<Thumb url={this.props.thumbData.active_url} title={this.props.thumbData.title} />
+							<Thumb 
+								title={this.props.thumbData.title}
+								url={this.props.thumbData.active_url} 
+								placeholder={this.props.thumbData.still_url} />
 							<div className="thumbInteract">
 								<div className="controls">
 									<Button 
@@ -127,15 +131,11 @@ class Active extends Component {
 				{this.state.copied ? (
 					<div className="copied" onClick={() => this.setState({copied: false})}><span>&times;</span>Copied!</div>
 				) : null}
-
-				{/*{this.state.embedded ? */}
 					<Modal show={this.state.embedded} className="embedded" mRef={this.modalRef} closeModal={this.closeModalHandler}>
 						<h3>Embed with Giphy</h3>	
 						<p>Need to embed this GIF on your website or blog? Just drop in the iFrame embed code below and you're done! The GIPHY Embed Player autoplays on all browsers and devices.</p>
 						<input type="text" onChange={this.changeEmbedURL} value={this.state.embedURL} />
 					</Modal>
-				{/*: null} */}
-
 			</Fragment>
 		)
 	}

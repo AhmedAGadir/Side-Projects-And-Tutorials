@@ -13,3 +13,7 @@
 	max-width: 700px;
 	width: 100%
 }
+
+.thumb img[alt="placeholder"] {
+	filter: blur(2px);
+}
