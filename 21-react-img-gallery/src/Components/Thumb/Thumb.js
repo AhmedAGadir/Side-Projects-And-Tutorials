@@ -9,10 +9,10 @@ class Thumb extends Component {
 		this.backgroundColors = ['orange','magenta','cyan', 'springgreen', 'dimgrey'];
 		this.randInd = Math.floor(Math.random() * this.backgroundColors.length);
 		this.style = {
-				background: this.backgroundColors[this.randInd],
-    			height: (Math.floor(Math.random() * 100) + 150) + 'px',
-    			borderRadius: '5px',
-    		}
+			background: this.backgroundColors[this.randInd],
+			height: (Math.floor(Math.random() * 100) + 150) + 'px',
+			borderRadius: '5px',
+		}
 	}
 
 	render() {
