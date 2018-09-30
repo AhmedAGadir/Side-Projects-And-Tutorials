@@ -39,6 +39,7 @@ class Trending extends Component {
 	        preview_url: d.images.downsized_medium.url,
 	        embed_url: d.embed_url,
 	        still_url: d.images.original_still.url,
+	        favourited: false,
 	      }
 	    });
 
@@ -56,12 +57,12 @@ class Trending extends Component {
 	}
 
 	changeThumb = () => {
-	    this.setState(prevState => {
-	    	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
-	        	return {active_thumb_ind: 0}
-	      	}
-	      	else return {active_thumb_ind: prevState.active_thumb_ind + 1}
-	    })
+	    // this.setState(prevState => {
+	    // 	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
+	    //     	return {active_thumb_ind: 0}
+	    //   	}
+	    //   	else return {active_thumb_ind: prevState.active_thumb_ind + 1}
+	    // })
 	}
 
 	resetTimer = () => {
@@ -72,17 +73,6 @@ class Trending extends Component {
 	selectThumbHandler = ind => {
 		this.resetTimer();
 		this.setState({active_thumb_ind: ind});
-	}
-
-	deleteThumbHandler = ind => {
-		if (window.confirm('Are you sure you want to delete this GIF?')) {
-			let thumbArr = [...this.state.thumb_data];
-	  		thumbArr.splice(ind, 1)
-	  		this.setState({
-	  			thumb_data: thumbArr,
-	  			active_thumb_ind: ind === this.state.thumb_data.length - 1 ? 0 : ind, 
-	  		});
-		}
 	}
 
  	prevThumbHandler = () => {
@@ -99,8 +89,24 @@ class Trending extends Component {
     	})
   	}
 
+  	favouriteActiveThumbHandler = () => {
+		let thumb_data = [...this.state.thumb_data];
+		thumb_data[this.state.active_thumb_ind].favourited = true;
+		this.setState({thumb_data})
+	}
+
+	deleteThumbHandler = ind => {
+		if (window.confirm('Are you sure you want to delete this GIF?')) {
+			let thumbArr = [...this.state.thumb_data];
+	  		thumbArr.splice(ind, 1)
+	  		this.setState({
+	  			thumb_data: thumbArr,
+	  			active_thumb_ind: ind === this.state.thumb_data.length - 1 ? 0 : ind, 
+	  		});
+		}
+	}
+
 	render() {
-		console.log(this.state.thumb_data)
 		if (!this.state.thumb_data) {
 			return <Loader style={{
 				position: 'absolute',
@@ -124,7 +130,8 @@ class Trending extends Component {
 					lastInd={ this.state.thumb_data.length - 1}
 					prev={this.prevThumbHandler}
 					next={this.nextThumbHandler}
-					deleteThumb={this.deleteThumbHandler}/>
+					deleteThumb={this.deleteThumbHandler}
+					favourite={this.favouriteActiveThumbHandler}/>
 				<MasonryGrid 
 					thumbData={this.state.thumb_data}
 					selectThumb={this.selectThumbHandler}

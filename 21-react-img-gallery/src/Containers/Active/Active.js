@@ -10,7 +10,6 @@ class Active extends Component {
 	constructor() {
 		super()
 		this.state = {
-			favourited: false,
 			copied: false,
 			embedded: false,
 			embedURL: '',
@@ -27,18 +26,10 @@ class Active extends Component {
 	componentWillUpdate(nextProps) {
 		if (nextProps.thumbData.active_url !== this.props.thumbData.active_url) {
 			this.setState({
-				favourited: false,
 				copied: false,
 				embedURL: `<iframe src="*****" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href=${nextProps.thumbData.embed_url}>via GIPHY</a></p>`
 			})
 		}
-	}
-
-	favouriteHandler = () => {
-		this.setState(prevState => {
-			return {favourited: !prevState.favourited}
-		})
-		console.log('active thumb favourited [could do some database stuff with this information]')
 	}
 
 	copyLinkHandler = () => {
@@ -65,7 +56,7 @@ class Active extends Component {
 		const pinterestIcon = <div><FontAwesomeIcon icon={["fab", "pinterest"]} /></div>
 
 		const heartAnimation = ['animatedHeart']
-		if (this.state.favourited) {
+		if (this.props.thumbData.favourited) {
 			heartAnimation.push('animate')
 		} 
 
@@ -90,8 +81,8 @@ class Active extends Component {
 								</div>
 								<div className="options">
 									<ul>
-										<li onClick={this.favouriteHandler}
-											className={this.state.favourited ? 'favourited' : null}>
+										<li onClick={this.props.favourite}
+											className={this.props.thumbData.favourited ? 'favourited' : null}>
 												<span className={heartAnimation.join(' ')}><FontAwesomeIcon icon="heart" /></span>Favourite</li>
 										<li onClick={this.copyLinkHandler}>
 											<FontAwesomeIcon icon="link" />Copy link</li>
