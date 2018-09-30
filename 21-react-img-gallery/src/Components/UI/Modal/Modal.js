@@ -18,12 +18,18 @@ class Modal extends Component {
 		}
 	}
 
+	closeModalHandler = e => {
+		if (e.target.nodeName === 'SPAN' || !this.props.mRef.current.contains(e.target)) {
+			this.props.closeModal();
+		}
+	}
+
 	render() {
 
 		if (this.props.show) {
-			window.addEventListener('mousedown', this.props.closeModal)
+			window.addEventListener('mousedown', this.closeModalHandler)
 		} else {
-			window.removeEventListener('mousedown', this.props.closeModal)
+			window.removeEventListener('mousedown', this.closeModalHandler)
 		}
 
 		let classes = ['modal'];
@@ -38,7 +44,7 @@ class Modal extends Component {
 					animationName: this.props.show ? 'blip-in' : 'blip-out',
 				}}>
 				<div className="wrap">
-					<span onClick={this.props.closeModal}>&times;</span> 
+					<span onClick={this.closeModalHandler}>&times;</span> 
 					{this.props.children}
 				</div>
 			</div>

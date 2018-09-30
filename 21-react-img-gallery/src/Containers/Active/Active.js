@@ -58,12 +58,6 @@ class Active extends Component {
 		this.setState({embedURL: e.target.value})
 	}
 
-	closeModalHandler = e => {
-		if (e.target.nodeName === 'SPAN' || !this.modalRef.current.contains(e.target)) {
-			this.setState({embedded: false})
-		}
-	}
-
 	render() {
 
 		const facebookIcon = <div><FontAwesomeIcon icon={["fab", "facebook-f"]} /></div>
@@ -88,10 +82,10 @@ class Active extends Component {
 							<div className="thumbInteract">
 								<div className="controls">
 									<Button 
-							            disabled={this.props.firstGif ? true : false}
+							            disabled={this.props.activeInd === 0}
 							            clicked={this.props.prev}><FontAwesomeIcon icon="chevron-left" /></Button>
 							      	<Button 
-							            disabled={this.props.lastGif ? true : false}
+							            disabled={this.props.activeInd === this.props.lastInd}
 							            clicked={this.props.next}><FontAwesomeIcon icon="chevron-right" /></Button>
 								</div>
 								<div className="options">
@@ -103,7 +97,7 @@ class Active extends Component {
 											<FontAwesomeIcon icon="link" />Copy link</li>
 										<li onClick={() => this.setState({embedded: true})}>
 											<FontAwesomeIcon icon="code" />Embed</li>
-										<li onClick={this.props.deleteThumb}>
+										<li onClick={() => this.props.deleteThumb(this.props.activeInd)}>
 											<FontAwesomeIcon icon="trash-alt" />Delete</li>
 									</ul>
 								</div>
@@ -131,7 +125,11 @@ class Active extends Component {
 				{this.state.copied ? (
 					<div className="copied" onClick={() => this.setState({copied: false})}><span>&times;</span>Copied!</div>
 				) : null}
-					<Modal show={this.state.embedded} className="embedded" mRef={this.modalRef} closeModal={this.closeModalHandler}>
+					<Modal 
+						className="embedded"
+						show={this.state.embedded}  
+						mRef={this.modalRef} 
+						closeModal={() => this.setState({embedded: false})}>
 						<h3>Embed with Giphy</h3>	
 						<p>Need to embed this GIF on your website or blog? Just drop in the iFrame embed code below and you're done! The GIPHY Embed Player autoplays on all browsers and devices.</p>
 						<input type="text" onChange={this.changeEmbedURL} value={this.state.embedURL} />

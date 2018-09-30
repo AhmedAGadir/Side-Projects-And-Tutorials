@@ -14,6 +14,7 @@ header {
 header nav ul {
 	list-style-type: none;
 	margin-right: auto;
+	text-align: center;
 }
 
 header nav li {

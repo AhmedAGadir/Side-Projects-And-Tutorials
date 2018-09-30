@@ -4,15 +4,34 @@ import errorImg from '../../assets/error-square.jpg'
 import './Thumb.css'
 
 class Thumb extends Component {
+	constructor() {
+		super();
+		this.backgroundColors = ['orange','magenta','cyan', 'springgreen', 'dimgrey'];
+		this.randInd = Math.floor(Math.random() * this.backgroundColors.length);
+		this.style = {
+				background: this.backgroundColors[this.randInd],
+    			height: (Math.floor(Math.random() * 100) + 150) + 'px',
+    			marginBottom: '10px',
+    			borderRadius: '5px',
+    		}
+	}
 
 	render() {
 
 		const errorImage = <img src={errorImg} alt="error"/>;
-		const placeholder = <img src={this.props.placeholder} alt="placeholder"/>
+		let placeholder;
+		if (this.props.id) {
+			// if we're outputting a list, e.g. MasonryGrid or Sidebar
+			placeholder = <div className="foo" style={this.style}></div>
+		} else {
+			placeholder = <img src={this.props.placeholder} alt="placeholder"/>
+		}
 
 		return (
 			<div className="thumb" onClick={this.props.clicked}>
+				{this.props.id ? null : null}
 				<Img src={this.props.url} loader={placeholder} unloader={errorImage} alt={this.props.title}/>
+				{this.props.id ? null : null}
 			</div>
 		)
 	}

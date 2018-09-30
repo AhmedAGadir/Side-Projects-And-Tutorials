@@ -10,7 +10,7 @@ import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // 2. Set the active image in the state of the Gallery component
 // 3. **** Create a list of inactive images using the GalleryThumb Component
 // 4. **** Add an automatic timer that changes the active images after 3 seconds
-// 5. **** On click of each GalleryThumb, update the active image
+// 5. On click of each GalleryThumb, update the active image
 // 6. **** Add a remove button on the GalleryThumb that deletes images when clicked
 // 7. Add a slick animation to transition between active images (that's more complex then just opacity)
 // 8. Add any extra styling & behaviour to make it look polished
@@ -70,13 +70,14 @@ class Trending extends Component {
 	}
 
 	selectThumbHandler = ind => {
+		console.log(ind)
 		this.setState({active_thumb_ind: ind});
 	}
 
-	deleteThumbHandler = () => {
+	deleteThumbHandler = ind => {
 		if (window.confirm('Are you sure you want to delete this GIF?')) {
 			let thumbArr = [...this.state.thumb_data];
-	  		thumbArr.splice(this.state.active_thumb_ind, 1)
+	  		thumbArr.splice(ind, 1)
 	  		this.setState({thumb_data: thumbArr});
 		}
 	}
@@ -111,14 +112,15 @@ class Trending extends Component {
 			<div>
 				<Active 
 					thumbData={activeThumbData}
-					firstGif={this.state.active_thumb_ind === 0}
-					lastGif={this.state.active_thumb_ind === this.state.thumb_data.length - 1}
+					activeInd={this.state.active_thumb_ind}
+					lastInd={ this.state.thumb_data.length - 1}
 					prev={this.prevThumbHandler}
 					next={this.nextThumbHandler}
 					deleteThumb={this.deleteThumbHandler}/>
 				<MasonryGrid 
 					thumbData={this.state.thumb_data}
-					selectThumb={this.selectThumbHandler}/>
+					selectThumb={this.selectThumbHandler}
+					deleteThumb={this.deleteThumbHandler}/>
 			</div>
 		)
 	}

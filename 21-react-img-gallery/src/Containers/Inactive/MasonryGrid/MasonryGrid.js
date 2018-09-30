@@ -11,10 +11,12 @@ class MasonryGrid extends Component {
 			<div className="masonryGrid">
 				{this.props.thumbData.map((thumb, ind) => (
 			  		<Thumb 
+			  			id={thumb.id}
 			  			key={thumb.id}
 			        	title={thumb.title}
 			  			url={thumb.preview_url}
-			  			clicked={() => this.props.selectThumb(ind)} />
+			  			clicked={() => this.props.selectThumb(ind)}
+			  			delete={() => this.props.deleteThumb(ind)} />
 			  	))}
 			</div>
 		)

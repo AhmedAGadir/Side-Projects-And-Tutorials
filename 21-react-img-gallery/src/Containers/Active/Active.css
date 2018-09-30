@@ -10,6 +10,12 @@
 	/*border: 8px solid white;*/
 }
 
+@media (max-width: 768px) {
+	.activeThumbCard {
+		width: 100%;
+	}
+}
+
 .activeThumbCard h1 {
 	margin-bottom: 20px;
 	/*max-width: 550px;*/
