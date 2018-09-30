@@ -6,6 +6,9 @@ import './MasonryGrid.css';
 class MasonryGrid extends Component {
 
 	truncate(str) {
+		if (str.length > 30) {
+			return str.substr(0, 27) + '...'
+		}
 		return str
 	}
 
@@ -14,10 +17,9 @@ class MasonryGrid extends Component {
 		return (
 			<div className="masonryGrid">
 				{this.props.thumbData.map((thumb, ind) => (
-					<div className="gridThumb">
+					<div className="gridThumb" key={thumb.id}>
 				  		<Thumb 
 				  			id={thumb.id}
-				  			key={thumb.id}
 				        	title={thumb.title}
 				  			url={thumb.preview_url}
 				  			clicked={() => this.props.selectThumb(ind)}

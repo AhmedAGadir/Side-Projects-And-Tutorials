@@ -12,6 +12,12 @@
 	}
 }
 
+@media (max-width: 500px) {
+	.masonryGrid {
+		column-count: 2;
+	}
+}
+
 @media (max-width: 425px) {
 	.masonryGrid {
 		column-count: 1;
@@ -23,15 +29,13 @@
 	border-radius: 5px;
 	margin-bottom: 10px;
 	line-height: 0;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
 }
 
 .masonryGrid .gridThumb:hover {
 	cursor: pointer;
-}
-
-.gridThumb {
-	position: relative;
-	z-index: 2;
 }
 
 .gridThumb .title {
@@ -40,7 +44,7 @@
 	opacity: 0;
 	position: absolute;
 	bottom: 0;
-    bottom: -25px;
+    bottom: -30px;
     left: 0;
     color: white;
     background: rgba(0,0,0,0.7);
@@ -48,7 +52,7 @@
     width: 100%;
     font-size: 14px;
     border-radius: 0 0 5px 5px;
-    height: 25px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,13 +70,13 @@
 
 .gridThumb .delete {
 	position: absolute;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
     top: 0;
-    left: -40px;
+    left: -30px;
     transition: 0.5s left;
 	z-index: 1;
 	opacity: 0;
@@ -83,6 +87,10 @@
 	left: 0;
 	opacity: 1;
 	z-index: 3;
+}
+
+.gridThumb .delete:hover {
+	/*opacity: 0.3;*/
 }
 
 .masonryGrid .thumb:hover {

@@ -83,7 +83,8 @@ class Active extends Component {
 									<ul>
 										<li onClick={this.props.favourite}
 											className={this.props.thumbData.favourited ? 'favourited' : null}>
-												<span className={heartAnimation.join(' ')}><FontAwesomeIcon icon="heart" /></span>Favourite</li>
+												<span className={heartAnimation.join(' ')}>
+													<FontAwesomeIcon icon="heart" /></span>Favourite</li>
 										<li onClick={this.copyLinkHandler}>
 											<FontAwesomeIcon icon="link" />Copy link</li>
 										<li onClick={() => this.setState({embedded: true})}>
