@@ -1,42 +1,15 @@
-/*.masonryGrid {	
-	width: 100%;
-	height: 1100px;
-	display: flex;
-	flex-flow: column wrap;
-	align-items: center;	
-	background: green;
-	column-count: 4;
-	max-height: 2000px;
-	margin-left: -8px; /* Adjustment for the gutter */
-	/*margin-top: 20px;
-	width: 80%;
-}
-
-.masonryGrid .thumb {
-	margin: 0 8px 8px 0; *//* Some gutter */
-	/*width: 24%;
-}
-
-.masonryGrid .thumb:hover {
-	opacity: 0.6;
-	cursor: pointer;
-}
-
-.masonryGrid .thumb img {
-	border-radius: 5px;
-}*/
-
-
 .masonryGrid {
 	column-count: 4;
-	column-gap: 10px;
+	column-gap: 15px;
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 20px auto;
+	padding: 20px;
 }
 
 @media (max-width: 768px) {
 	.masonryGrid {
 		column-count: 3;
+		column-gap: 10px;
 	}
 }
 
@@ -49,8 +22,14 @@
 .masonryGrid > div {
 	break-inside: avoid;
 	border-radius: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	line-height: 0;
+}
+
+@media (max-width: 768px) {
+	.masonryGrid > div  {
+		margin-bottom: 10px;
+	}
 }
 
 .masonryGrid .thumb:hover {

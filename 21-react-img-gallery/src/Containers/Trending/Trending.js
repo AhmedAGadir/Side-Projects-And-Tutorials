@@ -46,31 +46,31 @@ class Trending extends Component {
 	    console.log('thumb_data is:', thumb_data)
 	  })
 	  .then(_ => {
-	    // this.timer = setInterval(() => this.changeThumb(), 3000);
+	    this.timer = setInterval(() => this.changeThumb(), 3000);
 	  })
 	  .catch(err => console.log(err));
 	}
 
 	componentWillUnmount() {
-		// clearInterval(this.timer);
+		clearInterval(this.timer);
 	}
 
 	changeThumb = () => {
-	    // this.setState(prevState => {
-	    // 	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
-	    //     	return {active_thumb_ind: 0}
-	    //   	}
-	    //   	else return {active_thumb_ind: prevState.active_thumb_ind + 1}
-	    // })
+	    this.setState(prevState => {
+	    	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
+	        	return {active_thumb_ind: 0}
+	      	}
+	      	else return {active_thumb_ind: prevState.active_thumb_ind + 1}
+	    })
 	}
 
 	resetTimer = () => {
-	  // clearInterval(this.timer);
-	  // this.timer = setInterval(() => this.changeThumb(), 3000);
+	  clearInterval(this.timer);
+	  this.timer = setInterval(() => this.changeThumb(), 3000);
 	}
 
 	selectThumbHandler = ind => {
-		console.log(ind)
+		this.resetTimer();
 		this.setState({active_thumb_ind: ind});
 	}
 
@@ -78,25 +78,29 @@ class Trending extends Component {
 		if (window.confirm('Are you sure you want to delete this GIF?')) {
 			let thumbArr = [...this.state.thumb_data];
 	  		thumbArr.splice(ind, 1)
-	  		this.setState({thumb_data: thumbArr});
+	  		this.setState({
+	  			thumb_data: thumbArr,
+	  			active_thumb_ind: ind === this.state.thumb_data.length - 1 ? 0 : ind, 
+	  		});
 		}
 	}
 
  	prevThumbHandler = () => {
-    	// this.resetTimer();
+    	this.resetTimer();
     	this.setState(prevState => {
       		return {active_thumb_ind: prevState.active_thumb_ind - 1};
     	})
   	}
 
   	nextThumbHandler = () => {
-    	// this.resetTimer();
+    	this.resetTimer();
     	this.setState(prevState => {
     	  	return {active_thumb_ind: prevState.active_thumb_ind + 1};
     	})
   	}
 
 	render() {
+		console.log(this.state.thumb_data)
 		if (!this.state.thumb_data) {
 			return <Loader style={{
 				position: 'absolute',
@@ -104,6 +108,10 @@ class Trending extends Component {
 		   		left: '50%',
 		   		transform: 'translate(-50%,-50%) scale(1.8)',
 			}}/>
+		}
+		// if all data has been deleted
+		if (this.state.thumb_data.length === 0) {
+			return <h1>You've deleted every GIF :(</h1>
 		}
 
 		const activeThumbData = this.state.thumb_data[this.state.active_thumb_ind];
