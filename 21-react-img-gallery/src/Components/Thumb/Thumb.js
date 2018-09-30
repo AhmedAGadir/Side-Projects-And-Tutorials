@@ -11,7 +11,6 @@ class Thumb extends Component {
 		this.style = {
 				background: this.backgroundColors[this.randInd],
     			height: (Math.floor(Math.random() * 100) + 150) + 'px',
-    			marginBottom: '10px',
     			borderRadius: '5px',
     		}
 	}
@@ -22,16 +21,14 @@ class Thumb extends Component {
 		let placeholder;
 		if (this.props.id) {
 			// if we're outputting a list, e.g. MasonryGrid or Sidebar
-			placeholder = <div className="foo" style={this.style}></div>
+			placeholder = <div style={this.style}></div>
 		} else {
 			placeholder = <img src={this.props.placeholder} alt="placeholder"/>
 		}
 
 		return (
 			<div className="thumb" onClick={this.props.clicked}>
-				{this.props.id ? null : null}
 				<Img src={this.props.url} loader={placeholder} unloader={errorImage} alt={this.props.title}/>
-				{this.props.id ? null : null}
 			</div>
 		)
 	}
