@@ -73,11 +73,14 @@
 
 .thumbInteract .options {
 	/*background: pink;*/
+	margin: 25px 0;
+
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 	.thumbInteract .options {
-		margin: 25px 0;
+		margin: 0;
+		width: 100%;
 	}
 }
 

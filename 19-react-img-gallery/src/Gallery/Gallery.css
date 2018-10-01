@@ -19,7 +19,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 350px;
+	/*height: 350px;*/
 }
 
 .active .thumbnail {
@@ -62,14 +62,14 @@
 
 @media (min-width: 576px) {
   .card-columns {
-/*    -webkit-column-count: 3;
+    -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     orphans: 1;
-    widows: 1;*/
+    widows: 1;
   }
   .card-columns .card {
     display: inline-block;
@@ -98,7 +98,7 @@
 }
 
 /* ============= */
-
+/*
 .gallery {
 	position: fixed;
     top: 5vh;
@@ -119,7 +119,7 @@
 	height: 100vh;
 	/*-webkit-column-count: 1;
     -moz-column-count: 1;
-    column-count: 1;*/
+    column-count: 1;*//*
 }
 
 
@@ -142,3 +142,4 @@
 	background: cyan; 
 }
 
+*/

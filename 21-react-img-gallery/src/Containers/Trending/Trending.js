@@ -8,11 +8,11 @@ import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // 1. Make a call to the giphy API and pull in a list of random images (API url: https://api.giphy.com/v1/gifs/trending?api_key=PEyIrGaWdf08Lw4nezyXejpD9Y0pO6Rt)
 // 1.1 You can read up on the api over here https://developers.giphy.com/docs/
 // 2. Set the active image in the state of the Gallery component
-// 3. **** Create a list of inactive images using the GalleryThumb Component
+// 3. Create a list of inactive images using the GalleryThumb Component
 // 4. **** Add an automatic timer that changes the active images after 3 seconds
 // 5. On click of each GalleryThumb, update the active image
-// 6. **** Add a remove button on the GalleryThumb that deletes images when clicked
-// 7. Add a slick animation to transition between active images (that's more complex then just opacity)
+// 6. Add a remove button on the GalleryThumb that deletes images when clicked
+// 7. **** Add a slick animation to transition between active images (that's more complex then just opacity)
 // 8. Add any extra styling & behaviour to make it look polished
 
 
@@ -20,9 +20,16 @@ import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // background image for body in css file
 
 class Trending extends Component {
-	state = {
-		thumb_data: null,
-		active_thumb_ind: 0,
+	constructor() {
+		super();
+		this.state = {
+			thumb_data: null,
+			active_thumb_ind: 0,
+			error: false,
+			errorMessage: ''
+		};
+		this.timer = null;
+		this.seconds = 3000;
 	}
 
 	componentDidMount() {
@@ -47,9 +54,15 @@ class Trending extends Component {
 	    console.log('thumb_data is:', thumb_data)
 	  })
 	  .then(_ => {
-	    this.timer = setInterval(() => this.changeThumb(), 3000);
+	    this.timer = setInterval(() => this.changeThumb(), this.seconds);
 	  })
-	  .catch(err => console.log(err));
+	  .catch(err => {
+	  	console.log(err);
+	  	this.setState({
+	  		error: true, 
+	  		errorMessage: err.message
+	  	})
+	  });
 	}
 
 	componentWillUnmount() {
@@ -57,6 +70,8 @@ class Trending extends Component {
 	}
 
 	changeThumb = () => {
+		// remove comment out 
+
 	    // this.setState(prevState => {
 	    // 	if (prevState.active_thumb_ind === this.state.thumb_data.length - 1) {
 	    //     	return {active_thumb_ind: 0}
@@ -67,7 +82,7 @@ class Trending extends Component {
 
 	resetTimer = () => {
 	  clearInterval(this.timer);
-	  this.timer = setInterval(() => this.changeThumb(), 3000);
+	  this.timer = setInterval(() => this.changeThumb(), this.seconds);
 	}
 
 	selectThumbHandler = ind => {
@@ -107,6 +122,12 @@ class Trending extends Component {
 	}
 
 	render() {
+		// if fetch request fails 
+		if (this.state.error) {
+			return <h1>Error: {this.state.errorMessage} :(</h1>
+		}
+
+		// loading
 		if (!this.state.thumb_data) {
 			return <Loader style={{
 				position: 'absolute',

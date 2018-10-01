@@ -6,8 +6,8 @@ import './MasonryGrid.css';
 class MasonryGrid extends Component {
 
 	truncate(str) {
-		if (str.length > 30) {
-			return str.substr(0, 27) + '...'
+		if (str.length > 33) {
+			return str.substr(0, 30) + '..'
 		}
 		return str
 	}
