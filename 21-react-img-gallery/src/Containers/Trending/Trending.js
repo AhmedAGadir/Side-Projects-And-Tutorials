@@ -9,15 +9,11 @@ import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // 1.1 You can read up on the api over here https://developers.giphy.com/docs/
 // 2. Set the active image in the state of the Gallery component
 // 3. Create a list of inactive images using the GalleryThumb Component
-// 4. **** Add an automatic timer that changes the active images after 3 seconds
+// 4. Add an automatic timer that changes the active images after 3 seconds
 // 5. On click of each GalleryThumb, update the active image
 // 6. Add a remove button on the GalleryThumb that deletes images when clicked
 // 7. **** Add a slick animation to transition between active images (that's more complex then just opacity)
 // 8. Add any extra styling & behaviour to make it look polished
-
-
-// to do:
-// background image for body in css file
 
 class Trending extends Component {
 	constructor() {
