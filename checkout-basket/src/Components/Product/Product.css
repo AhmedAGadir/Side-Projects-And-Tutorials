@@ -13,7 +13,7 @@
 	width: 300px;
 }
 
-.product > div.basketCount {
+.product > div.basketCount > select {
 	width: 40px;
     height: 40px;
     display: flex;

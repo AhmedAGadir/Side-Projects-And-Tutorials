@@ -16,7 +16,8 @@ const basketCheckout = props => {
 	                        name={product.name} 
 	                        basketCount={product.basket}
 	                        price={product.price} 
-	                        remove={() => props.removeFromBasket(product.name)} />
+	                        remove={() => props.removeFromBasket(product.name)}
+	                        basketChange={e => props.changeBasket(e, product.name)} />
 	                </li>
 	            ))}   
 	        </ul>

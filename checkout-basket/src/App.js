@@ -69,8 +69,15 @@ class App extends Component {
   removeFromBasketHandler = name => {
     let data = [...this.state.data];
     let ind = data.findIndex(d => d.name === name)
-    console.log(ind)
     data[ind].basket = 0;
+    this.setState({data})
+  }
+
+  changeBasketHandler = (e, name) => {
+    console.log(e.target.value)
+    let data = [...this.state.data];
+    let ind = data.findIndex(d => d.name === name)
+    data[ind].basket = parseInt(e.target.value);
     this.setState({data})
   }
 
@@ -88,7 +95,7 @@ class App extends Component {
                   <Route path="/checkout" render={() => (
                     <Link to='/'>
                       <Button classes={["purple"]}>
-                          Continue shopping
+                          Continue Shopping
                       </Button>
                     </Link>
                   )} />
@@ -111,7 +118,8 @@ class App extends Component {
                 <Route path="/checkout" render={() => (
                   <BasketCheckout 
                     data={this.state.data}
-                    removeFromBasket={this.removeFromBasketHandler}/>
+                    removeFromBasket={this.removeFromBasketHandler}
+                    changeBasket={this.changeBasketHandler}/>
                 )} />
 
                 </main>
