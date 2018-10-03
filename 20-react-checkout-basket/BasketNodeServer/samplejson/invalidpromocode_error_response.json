@@ -1,8 +1,0 @@
-{
-  "errors": [
-    {
-      "field": "promoCode",
-      "msg": "The promo code you supplied is invalid."
-    }
-  ]
-}
