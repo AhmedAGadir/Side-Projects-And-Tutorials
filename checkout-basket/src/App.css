@@ -1,0 +1,11 @@
+header a:first-of-type button {
+	float: left;
+}
+
+header a:last-of-type button {
+	float: right;
+}
+
+main {
+	clear: both;
+}

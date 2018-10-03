@@ -1,0 +1,41 @@
+.product {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 20px 0;
+}
+
+.product > div {
+	margin: 0 10px;
+}
+
+.product div:first-child {
+	width: 300px;
+}
+
+.product > div.basketCount {
+	width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border: 3px solid black;
+}
+
+.product > div.basketCount + div {
+	width: 30px;
+}
+
+@media (max-width: 425px) {
+	.product {
+		border: 1px solid #bbb;
+		box-shadow: 0 2px 3px #ccc;
+		flex-wrap: wrap;
+	}
+
+	.product > div {
+		width: 100%;
+    	text-align: center;
+    	margin: 5px;
+	}
+}

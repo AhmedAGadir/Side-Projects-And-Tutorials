@@ -1,0 +1,32 @@
+.button {
+	border: 3px solid black;
+	box-shadow: 2px 2px black;
+	outline: none;
+	font-size: inherit;
+	padding: 5px 10px;
+}
+
+.button.blue {
+	background-color: #3174DC;
+	color: white;
+}
+
+.button.purple {
+	background-color: #9A00FF;
+	color: white;
+	margin: 20px;
+}
+
+.button:hover,
+.button:active {
+	cursor: pointer;
+}
+
+.button:active {
+	box-shadow: none;
+}
+
+.button.proceed {
+	float: right;
+	margin: 40px 20px;
+}

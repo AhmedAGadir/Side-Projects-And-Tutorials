@@ -28,7 +28,11 @@ class Thumb extends Component {
 
 		return (
 			<div className="thumb" onClick={this.props.clicked}>
-				<Img src={this.props.url} loader={placeholder} unloader={errorImage} alt={this.props.title}/>
+				<Img 
+					src={this.props.url} 
+					loader={placeholder} 
+					unloader={errorImage} 
+					alt={this.props.title}/>
 			</div>
 		)
 	}

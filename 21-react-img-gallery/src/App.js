@@ -13,8 +13,10 @@ library.add(faStroopwafel, faHeart, faLink, faTrashAlt, faCode, faChevronLeft, f
 // find a way to have correctly sized placeholders (maybe use height property given in the fetch response and then maintain aspect ratio as the height shrinks)
 // build search page, 
 // more options when thumbnails are hovered over
+// fix the hover title, (crowded when the thumbnail shrinks)
 // fix the embedding link
 // learn how to build a better heart animation
+// better use of react lifecycle components & generally to do things in the proper react-y way
 
 class App extends Component {
   render() {
