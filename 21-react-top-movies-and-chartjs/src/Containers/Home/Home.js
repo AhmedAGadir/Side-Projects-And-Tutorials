@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import MovieCard from '../../Components/MovieCard/MovieCard';
+import Loader from '../../Components/UI/Loader/Loader';
+import './Home.css';
 
 class Home extends Component {
 	state = {
@@ -23,11 +25,18 @@ class Home extends Component {
 				console.log(err);
 				this.setState({movieDataError: true})
 			})
-
 	}
 
 	render() {
-		if (!this.state.movieData) return <h1>...Loading</h1>
+
+		if (!this.state.movieData) return (
+			<Loader style = {{
+				position: 'absolute',
+			    top: '50%',
+			    left: '50%',
+			    transform: 'translate(-50%,-50%) scale(1.2)'
+			}}/>
+		)
 		if (this.state.movieDataError) return <h1>Error, could not load movie data</h1>
 
 		let movieCards = this.state.movieData
