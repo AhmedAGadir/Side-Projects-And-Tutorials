@@ -7,8 +7,8 @@ import Button from '../../Components/UI/Button/Button';
 import './Active.css';
 
 class Active extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			copied: false,
 			embedded: false,

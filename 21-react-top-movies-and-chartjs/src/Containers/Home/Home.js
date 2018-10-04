@@ -10,11 +10,6 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://my-json-server.typicode.com/sky-uk/monitoring-tech-test/data')
-			.then(res => res.json())
-			.then(data => console.log('timeseries data', data))
-			.catch(err => console.log(err))
-
 		fetch('https://my-json-server.typicode.com/sky-uk/monitoring-tech-test/assets')
 			.then(res => res.json())
 			.then(movieData => {

@@ -16,8 +16,8 @@ import MasonryGrid from '../Inactive/MasonryGrid/MasonryGrid';
 // 8. Add any extra styling & behaviour to make it look polished
 
 class Trending extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			thumb_data: null,
 			active_thumb_ind: 0,

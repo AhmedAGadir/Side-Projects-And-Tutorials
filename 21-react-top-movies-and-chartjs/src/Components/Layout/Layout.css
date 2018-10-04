@@ -5,7 +5,7 @@ a {
 
 header {
 	min-height: 15vh;
-	background: blueviolet;
+	background: lightslategray;
     color: #eee;
 	display: flex;
 	align-items: center;
@@ -42,7 +42,7 @@ h1 {
 
 footer {
 	min-height: 15vh;
-	background: blueviolet;
+	background: lightslategray;
     color: #eee;
 	display: flex;
 	align-items: center;

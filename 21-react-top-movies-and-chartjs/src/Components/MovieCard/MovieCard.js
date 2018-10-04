@@ -19,7 +19,7 @@ class MovieCard extends Component {
 					<img src={this.props.img} alt={this.props.name} />
 				</div>
 				<div className="cardInfo">
-					<h3>{this.props.place}) {this.props.name}</h3>
+					<h3>{this.props.place}. {this.props.name}</h3>
 					<p>{this.props.description}</p>
 					<div className="tags">
 						<span className="views">{this.props.skyGoViews} views</span>

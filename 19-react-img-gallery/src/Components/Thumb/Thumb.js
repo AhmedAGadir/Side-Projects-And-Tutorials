@@ -4,8 +4,8 @@ import errorImg from '../../assets/error-square.jpg'
 import './Thumb.css'
 
 class Thumb extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.backgroundColors = ['orange','magenta','cyan', 'springgreen', 'dimgrey'];
 		this.randInd = Math.floor(Math.random() * this.backgroundColors.length);
 		this.style = {
