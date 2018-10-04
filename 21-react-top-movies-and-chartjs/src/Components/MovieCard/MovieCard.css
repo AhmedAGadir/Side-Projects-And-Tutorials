@@ -1,0 +1,92 @@
+.movieCard {
+	background: #fff;
+	height: 250px;
+	display: flex;
+	width: 90%;
+	max-width: 800px;
+	min-width: 300px;
+	margin: 20px auto;
+	box-shadow: 2px 3px 3px rgba(0,0,0,0.5);
+	transition: 1s all ease;
+	position: relative;
+	animation: fadeIn 1.5s forwards;
+	border: 2px solid #ccc;
+}
+
+@keyframes fadeIn {
+	0% {
+	opacity: 0.5;
+	bottom: -20px;
+	}
+	100% {
+	opacity: 1;
+	bottom: 0px;
+	}
+}
+
+.movieCard:hover {
+	transform: scale(1.03);
+	box-shadow: 4px 5px 5px rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.movieCard {
+		height: 200px;
+	}
+}
+
+@media (max-width: 425px) {
+	.movieCard {
+		height: 100px;
+	}
+}
+
+
+.preview {
+	height: 100%;
+	/*background: red;*/
+}
+
+.preview img {
+	height: 100%;
+}
+
+
+.cardInfo {
+	padding: 20px;
+	width: 100%;
+	/*background: lightblue;*/
+	position: relative;
+}
+
+.cardInfo h3 {
+
+}
+
+.cardInfo p {
+	margin: 20px 0;
+	letter-spacing: 0.2px;
+}
+
+@media (max-width: 425px) {
+	.cardInfo p {
+		display: none;	
+	}
+}
+
+.tags {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	/*background: yellow;*/
+	padding: 10px;
+}
+
+.tags > span {
+	background: #ccc;
+	margin-left: 10px;
+	padding: 3px;
+}
+.views {}
+.duration {}
