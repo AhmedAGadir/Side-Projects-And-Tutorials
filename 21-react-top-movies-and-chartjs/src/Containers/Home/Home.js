@@ -4,7 +4,7 @@ import MovieCard from '../../Components/MovieCard/MovieCard';
 class Home extends Component {
 	state = {
 		movieData: null,
-		movieDataError: false;
+		movieDataError: false,
 	}
 
 	componentDidMount() {
@@ -13,7 +13,7 @@ class Home extends Component {
 			.then(data => console.log('timeseries data', data))
 			.catch(err => console.log(err))
 
-		fetch('https://my-json-server.typicode.com/sky-uk/monitoring-tech-test/asses')
+		fetch('https://my-json-server.typicode.com/sky-uk/monitoring-tech-test/assets')
 			.then(res => res.json())
 			.then(movieData => {
 				console.log('movie data', movieData);
@@ -30,10 +30,13 @@ class Home extends Component {
 		if (!this.state.movieData) return <h1>...Loading</h1>
 		if (this.state.movieDataError) return <h1>Error, could not load movie data</h1>
 
-		let movieCards = this.state.movieData.map(movie => (
+		let movieCards = this.state.movieData
+		.sort((a,b) => b.skygoTotalViews - a.skygoTotalViews)
+		.map((movie,ind) => (
 			<MovieCard 
 				key={movie.name}
 				name={movie.name}
+				place={ind+1}
 				description={movie.description}
 				img={movie.assetImage}
 				duration={movie.duration}

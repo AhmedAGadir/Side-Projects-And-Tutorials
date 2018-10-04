@@ -5,8 +5,8 @@ a {
 
 header {
 	min-height: 15vh;
-	background: #555151;
-	color: #fff;
+	background: blueviolet;
+    color: #eee;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end
@@ -30,20 +30,19 @@ header li a.active {
 
 main {
 	min-height: 70vh;
-	background: #ecf4f3;
+	background: #eee;
 	padding: 15px;
 }
 
 h1 {
 	padding: 20px;
-	background: #76dbd1;
-	color: #384140;
+	background: yellow;
 }
 
 footer {
 	min-height: 15vh;
-	background: #555151;
-	color: #fff;
+	background: blueviolet;
+    color: #eee;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end
@@ -54,6 +53,5 @@ footer p {
 }
 
 footer p a {
-	border-bottom: 3px solid orange;
-	color: #76dbd1;
+	border-bottom: 3px solid yellow;
 }
