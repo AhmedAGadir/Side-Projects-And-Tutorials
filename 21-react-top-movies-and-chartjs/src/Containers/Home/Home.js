@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import MovieCard from '../../Components/MovieCard/MovieCard';
 import Loader from '../../Components/UI/Loader/Loader';
 import './Home.css';
@@ -37,14 +38,16 @@ class Home extends Component {
 		let movieCards = this.state.movieData
 		.sort((a,b) => b.skygoTotalViews - a.skygoTotalViews)
 		.map((movie,ind) => (
-			<MovieCard 
-				key={movie.name}
-				name={movie.name}
-				place={ind+1}
-				description={movie.description}
-				img={movie.assetImage}
-				duration={movie.duration}
-				skyGoViews={movie.skygoTotalViews} />
+			<Link to="/">
+				<MovieCard 
+					key={movie.name}
+					name={movie.name}
+					place={ind+1}
+					description={movie.description}
+					img={movie.assetImage}
+					duration={movie.duration}
+					skyGoViews={movie.skygoTotalViews} />
+			</Link>
 		));
 
 		return (
