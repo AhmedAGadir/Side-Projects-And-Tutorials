@@ -14,11 +14,11 @@ class Chart extends Component {
 	        scales: {
 	            xAxes: [{
 	                type: 'time',
-	                time: {
-	                    displayFormats: {
-	                        // quarter: 'MMM YYYY'
-	                    }
-	                }
+	                // time: {
+	                //     displayFormats: {
+	                //         quarter: 'MMM YYYY'
+	                //     }
+	                // }
 	            }]
 	        },
 	        title: {
@@ -30,7 +30,6 @@ class Chart extends Component {
 	        	display: false
 	        }
 	    }
-	    console.log(labels)
 
 		const chartData = {
 		  	labels: labels,
