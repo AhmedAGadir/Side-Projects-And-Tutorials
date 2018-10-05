@@ -21,11 +21,11 @@ class Chart extends Component {
 	                }
 	            }]
 	        },
-	        // title: {
-	        // 	display: true,
-	        // 	text: labels[0].toDateString(),
-	        //  fontSize: 30
-	        // },
+	        title: {
+	        	display: true,
+	        	text: labels[0].toDateString(),
+	         	fontSize: 24
+	        },
 	        legend: {
 	        	display: false
 	        }

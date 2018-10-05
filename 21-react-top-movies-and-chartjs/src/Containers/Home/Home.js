@@ -38,9 +38,10 @@ class Home extends Component {
 		let movieCards = this.state.movieData
 		.sort((a,b) => b.skygoTotalViews - a.skygoTotalViews)
 		.map((movie,ind) => (
-			<Link to="/">
+			<Link 
+				to={"/views/" + movie.name} 
+				key={movie.name}>
 				<MovieCard 
-					key={movie.name}
 					name={movie.name}
 					place={ind+1}
 					description={movie.description}

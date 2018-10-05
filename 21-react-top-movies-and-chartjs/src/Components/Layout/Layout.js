@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import Home from '../../Containers/Home/Home';
-import TimeSeries from '../../Containers/TimeSeries/TimeSeries'
+import Views from '../../Containers/Views/Views'
 import './Layout.css';
 
 const layout = props => (
@@ -10,13 +10,15 @@ const layout = props => (
 			<nav>
 				<ul>
 					<li><NavLink to="/" exact>Home</NavLink></li>
-					<li><NavLink to="/timeSeries" >TimeSeries</NavLink></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
+		<Switch>
 			<Route path="/" exact component={Home} />
-			<Route path="/timeSeries" exact component={TimeSeries} />
+			<Route path="/views/:id" exact component={Views} />
+			<Route render={() =><h1>404 Not Found</h1>} /> 
+		</Switch>
 		</main>
 		<footer>
 			<p>Coded by <a target="_blank" href="http://ahmedagadir.com" rel="noopener noreferrer">Ahmed Abdel Gadir</a></p>
