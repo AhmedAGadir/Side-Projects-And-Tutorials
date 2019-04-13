@@ -1,0 +1,23 @@
+{
+    "name": "Dont Wanna See That",
+    "version": "1.0",
+    "description": "Tired of pervy ads on anime streaming websites...let's see if we can do something about that",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.masterani.me/anime/watch/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "myStyles.css"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ]
+}

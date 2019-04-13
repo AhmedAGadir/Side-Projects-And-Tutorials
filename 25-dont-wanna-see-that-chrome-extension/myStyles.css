@@ -1,0 +1,18 @@
+.row:nth-of-type(2) {
+    display: none !important;
+}
+
+/* #watch {
+    position: relative;
+}
+
+div#watch:before {
+    content: '';
+    position: absolute;
+    top: 175px;
+    left: 500px;
+    width: 610px;
+    height: 270px;
+    background: purple;
+    z-index: 99;
+} */
