@@ -272,7 +272,7 @@ header nav button span[class^=bar] {
 #banner {
     height: 43rem;
     background-color: #0F2429;
-    background-image: url('http://ahlulquranacademy.co.uk/Home/wp-content/uploads/2018/09/AQA-Banner-S.jpg');
+    background-image: url('./assets/AQA-Banner-A.jpg');
     background-position: 0 65%;
     background-size: cover;
     background-repeat: no-repeat;
